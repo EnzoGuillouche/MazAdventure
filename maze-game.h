@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include "maze-map.h"
 
 int hp = 20;
 int choice;
+int direction;
 int positionX = 0;
 int positionY = 0;
 
@@ -56,16 +58,16 @@ void actionText(){
 
 void directionF(){
     printf("\n\t Choose your action:  ");
-    scanf("%d", direction);
+    scanf("%d", &direction);
     getchar();
     switch (direction)
     {
         case 1:
-            currentMazeCell = currentMazeCell + 1;
+            currentMazeCell = 1;
             currentMaze();
             break;
         case 2:
-            currentMazeCell = currentMazeCell + 4;
+            currentMazeCell = 4;
             currentMaze();
             break;
         default:
@@ -83,4 +85,6 @@ void gameloop(){
     directionF();
     clearScreen();
     printf("bug");
+    /*printf("You crossed the door, and arrived at the 1st room.");
+    printf("You went upstairs, and arrived at the 4th room."); */w<fvswqqW<<
 }

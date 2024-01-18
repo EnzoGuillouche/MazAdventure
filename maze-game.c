@@ -1,5 +1,5 @@
-#include "maze-map.h"
 #include "maze-game.h"
+
 
 int main(void){
     clearScreen();
@@ -7,6 +7,6 @@ int main(void){
     printf("\n\t===================================");
     printf("    \n\n"); 
     choiceMenu();
-    currentMaze();
+    mazeBegin();
     gameloop();
 }
