@@ -24,7 +24,7 @@ void choiceMenu(){
     printf("\n\n\t\tYou realise that you need to get out of this place, or.. something would happen.");
     printf("\n\n\n\t\tYou have to move throughout a maze to find the exit. ");
     printf("\n\t\tYou can move one room by room, encounter monsters and find traps. ");
-    printf("\n\n\n\t\tYou'll execute actions with numbers and the Enter key. (You'll need to press Enter twice.)\n\t\tThe choices will be displayed to know when to use certain keys. ");
+    printf("\n\n\n\t\tYou'll execute actions with numbers and the Enter key. \n\t\tThe choices will be displayed to know when to use certain keys. ");
     printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
     getchar();
     return;
