@@ -38,13 +38,13 @@ void actionText(){
         printf("\n\n\t You can go to the right (1) or go upstairs (2).");
         break;
     case 1:
-        printf("\n\n\t You can go to the left (3) or go upstairs (2).");
+        printf("\n\n\t You can go upstairs (2).");
         break;
     case 4:
-        printf("\n\n\t You can go to the right (1) or go downstairs (4).");
+        printf("\n\n\t You can go to the right (1).");
         break;
     case 5:
-        printf("You can go to the right (1), go upstairs, to the left (3) or go downstairs (4).");
+        printf("\n\n\t You can go to the right (1) or go upstairs (2).");
         break;
     default:
         break;
@@ -146,7 +146,17 @@ void roomAction(){
             printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
             printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
             getchar();
-            fightRoom5();
+            healRoom();
+            break;
+        case 9:
+            // printf("\n\n\t\t\t\t\t You arrived at the 5th room.\n");
+            // printf("\n\n\t\t\t\t\t  You felt a little warmer.\n");
+            // printf("\n\n\t\t\t\t  The silence was broken by a painful growl.\n");
+            // printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
+            // printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+            // getchar();
+            //Room9();
+            maze9();
             break;
         default:
             mazeBegin();

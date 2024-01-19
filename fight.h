@@ -220,7 +220,7 @@ void fightRoom4(){
     }
 }
 
-void fightRoom5(){
+void healRoom(){
     clearScreen();
     //********* Monster *********
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t   ______ \n");
@@ -298,8 +298,11 @@ void fightRoom5(){
         printf("\t\t\t\t\t   |         want to. Go ahead.         |\n");
         printf("\t\t\t\t\t   |                                    |\n");
         printf("\t\t\t\t\t   |                            Enter ->|\n");
-        printf("\t\t\t\t\t   ====================================== ");
-        getchar();
+        printf("\t\t\t\t\t   ====================================== \n");
+        currentMazeCell = 5;
+        roomEvent = 1;
+        transition();
+        gameloop();
     }
     else{
         clearScreen();
@@ -317,8 +320,8 @@ void fightRoom5(){
         printf("\t\t\t\t\t   |                                    |\n");
         printf("\t\t\t\t\t   ====================================== ");
         printf("\n\n\t\t\t\t\t\t\t   (1) to rest ");
-        printf("\n\n\t\t\t\t\t\t\t   (Any key) to ignore  ");
-        scanf("%d", &choice);
+        printf("\n\n\t\t\t\t\t\t\t   (Any key) to leave  ");
+        scanf("%c", &choice);
         getchar();
         switch (choice)
         {
@@ -333,30 +336,21 @@ void fightRoom5(){
             printf("\t\t\t\t\t\t      |'\\__________/'|  \n");
             printf("\t\t\t\t\t   ======================================\n");
             printf("\t\t\t\t\t   |                                    |\n");
-            printf("\t\t\t\t\t   |         You're now healed.         |\n");
-            printf("\t\t\t\t\t   |        Go leave this place.        |\n");
+            printf("\t\t\t\t\t   |      You're now healed of your     |\n");
+            printf("\t\t\t\t\t   |     wounds. Go leave this place.   |\n");
             printf("\t\t\t\t\t   |                                    |\n");
             printf("\t\t\t\t\t   |                            Enter ->|\n");
-            printf("\t\t\t\t\t   ====================================== ");
-            getchar();
+            printf("\t\t\t\t\t   ====================================== \n");
+            currentMazeCell = 5;
+            roomEvent = 1;
+            transition();
             break;
         
         default:
             clearScreen();
-            printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t   ______ \n");
-            printf("\t\t\t\t\t\t          _|o  o|_\n");
-            printf("\t\t\t\t\t\t         /  \\/\\/  \\\n");
-            printf("\t\t\t\t\t\t        /          \\\n");
-            printf("\t\t\t\t\t\t       /  /______\\  \\ \n");
-            printf("\t\t\t\t\t\t      |'\\__________/'|  \n");
-            printf("\t\t\t\t\t   ======================================\n");
-            printf("\t\t\t\t\t   |                                    |\n");
-            printf("\t\t\t\t\t   |      I'll let you go where you     |\n");
-            printf("\t\t\t\t\t   |         want to. Go ahead.         |\n");
-            printf("\t\t\t\t\t   |                                    |\n");
-            printf("\t\t\t\t\t   |                            Enter ->|\n");
-            printf("\t\t\t\t\t   ====================================== ");
-            getchar();
+            currentMazeCell = 5;
+            roomEvent = 1;
+            transition();
             break;
         }
     }
