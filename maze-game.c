@@ -1,4 +1,4 @@
-#include "maze-game.h"
+#include "fight.h"
 
 
 int main(void){
@@ -7,6 +7,5 @@ int main(void){
     printf("\n\t===================================");
     printf("    \n\n"); 
     choiceMenu();
-    mazeBegin();
     gameloop();
 }

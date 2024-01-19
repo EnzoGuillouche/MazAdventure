@@ -1,14 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <string.h>
 #include "maze-map.h"
 
 int hp = 20;
+int hpMonster = 10;
 int choice;
+int fightChoice;
 int direction;
 int positionX = 0;
 int positionY = 0;
+char item[] = "Dull Knife\n";
+char item2[] = "Warm Furr\n";
 
 void clearScreen() {
     //printf("\033[2J\033[1;1H");
@@ -16,29 +16,18 @@ void clearScreen() {
 }
 
 void choiceMenu(){
-    printf("\n\tPress 1 to play:  ");
-    scanf("%d", &choice);
+    printf("\n\tPress Enter to play:  ");
     getchar();
-    switch (choice)
-    {
-        case 1:
-            clearScreen();
-            printf("\n\n\t\tYou fell into the oblivion, into a dark and moisty room.");
-            printf("\n\t\tThis place looks like it's another dimension, the darkside of the real world.");
-            printf("\n\n\t\tYou realise that you need to get out of this place, or.. something would happen.");
-            printf("\n\n\n\t\tYou have to move throughout a maze to find the exit. ");
-            printf("\n\t\tYou can move one room by room, encounter monsters and find traps. ");
-            printf("\n\n\t\tYou'll execute actions with numbers. \n\t\tThe choices will be displayed to know when to use certain keys. ");
-            printf("\n\n\n\t\t\tPress any key to continue:  ");
-            scanf("%d", &choice);
-            getchar();
-            return;
-            break;
-        default:
-            clearScreen();
-            choiceMenu();
-            break;
-    }
+    clearScreen();
+    printf("\n\n\t\tYou fell into the oblivion, into a dark and moisty room.");
+    printf("\n\t\tThis place looks like it's another dimension, the darkside of the real world.");
+    printf("\n\n\t\tYou realise that you need to get out of this place, or.. something would happen.");
+    printf("\n\n\n\t\tYou have to move throughout a maze to find the exit. ");
+    printf("\n\t\tYou can move one room by room, encounter monsters and find traps. ");
+    printf("\n\n\n\t\tYou'll execute actions with numbers and the Enter key. (You'll need to press Enter twice.)\n\t\tThe choices will be displayed to know when to use certain keys. ");
+    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+    getchar();
+    return;
 }
 
 
@@ -46,10 +35,17 @@ void actionText(){
     switch (currentMazeCell)
     {
     case 0:
-        printf("\n\n\t You can go to the right (1) or go upstrairs (2).");
+        printf("\n\n\t You can go to the right (1) or go upstairs (2).");
         break;
     case 1:
-        printf("\n\n\t You can go to the left (3) or go upstrairs (2).");
+        printf("\n\n\t You can go to the left (3) or go upstairs (2).");
+        break;
+    case 4:
+        printf("\n\n\t You can go to the right (1) or go downstairs (4).");
+        break;
+    case 5:
+        printf("You can go to the right (1), go upstairs, to the left (3) or go downstairs (4).");
+        break;
     default:
         break;
     }
@@ -57,34 +53,122 @@ void actionText(){
 }
 
 void directionF(){
-    printf("\n\t Choose your action:  ");
+    printf("\n\n\t Choose your action:  ");
     scanf("%d", &direction);
     getchar();
     switch (direction)
     {
         case 1:
-            currentMazeCell = 1;
+            currentMazeCell = currentMazeCell + 1;
             currentMaze();
             break;
         case 2:
-            currentMazeCell = 4;
+            currentMazeCell = currentMazeCell + 4;
             currentMaze();
+            break;
+        case 3:
+            currentMazeCell = currentMazeCell - 1;
+            break;
+        case 4:
+            currentMazeCell = currentMazeCell - 4;
+            currentMaze();
+            break;
+        case 5:
+            roomEvent = 1;
+            openInventory("inventory.txt");
             break;
         default:
             clearScreen();
-            currentMaze();
             gameloop();
             break;
         }
     return;
 }
 
+int openInventory(const char* fileName){
+    clearScreen();
+    printf("\n\t\t=========================");
+    printf("\n\t\t| Inventory:            |\n");
+    printf("\n\t\t|                       |\n");
+    FILE* myFile = fopen(fileName, "r");
+    if(myFile == NULL)
+    {
+        fputs("Cannot open the file\n", stderr);
+        return EXIT_FAILURE;
+    }
+    
+    char ch;
+    while ((ch = fgetc(myFile)) != EOF)
+        putchar(ch);
+
+    fclose(myFile);
+    printf("\n\t\t|                       |");
+    printf("\n\t\t=========================");
+    printf("\n\n\n\n\t\tLeave the inventory by pressing Enter: ");
+    getchar();
+    gameloop();
+}
+
+void addInventory(){
+    FILE* myFile = fopen("inventory.txt", "w+");
+    fprintf(myFile, "\t\t - %s", item);
+    fclose(myFile);
+    return;
+}
+
+void roomAction(){
+    switch (currentMazeCell)
+    {
+        case 1:
+            printf("\n\n\t\t\t\tYou crossed the door, and arrived at the 1st room.\n");
+            printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
+            printf("\n\n\t\t\t\tYou found some moisty furniture, nothing interesting.\n");
+            printf("\n\n\t\t\t\tHowever, a monster woke up in front of you. \n");
+            printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+            getchar();
+            fightRoom1();
+            break;
+        case 4:
+            printf("\n\n\t\t\t\tYou went upstairs, and arrived at the 4th room.\n");
+            printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
+            printf("\n\n\t\t\t\t\t  You found a dull knife.\n");
+            char item = "Dull Knife";
+            addInventory();
+            printf("\n\n\t\t\t\t   A monster appeared and scared you. \n");
+            printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+            getchar();
+            fightRoom4Surprise();
+            break;
+        case 5:
+            printf("\n\n\t\t\t\t\t You arrived at the 5th room.\n");
+            printf("\n\n\t\t\t\t\t  You felt a little warmer.\n");
+            printf("\n\n\t\t\t\t  The silence was broken by a painful growl.\n");
+            printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
+            printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+            getchar();
+            fightRoom5();
+            break;
+        default:
+            mazeBegin();
+            gameloop();
+            break;
+    }
+    return;
+}
+
+void transition(){
+    printf("\n\t\t\t\tPress any key to continue:  ");
+    getchar();
+    gameloop();
+}
+
 void gameloop(){
-    printf("\n\t You HP bar: %d", hp);
+    currentMaze();
+    printf("\n\t Your HP bar: %d", hp);
     actionText();
+    printf("\n\t Look at your inventory typing '5'. ");
+    roomEvent = 0;
     directionF();
     clearScreen();
-    printf("bug");
-    /*printf("You crossed the door, and arrived at the 1st room.");
-    printf("You went upstairs, and arrived at the 4th room."); */w<fvswqqW<<
+    printf("end of gameloop");
 }
