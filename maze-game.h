@@ -68,13 +68,17 @@ void directionF(){
             break;
         case 3:
             currentMazeCell = currentMazeCell - 1;
+            currentMaze();
             break;
         case 4:
             currentMazeCell = currentMazeCell - 4;
             currentMaze();
             break;
         case 5:
-            roomEvent = 1;
+            roomEvent1 = 1;
+            roomEvent4 = 1;
+            roomEvent5 = 1;
+            roomEvent9 = 1;
             openInventory("inventory.txt");
             break;
         default:
@@ -140,9 +144,9 @@ void roomAction(){
             fightRoom4Surprise();
             break;
         case 5:
-            printf("\n\n\t\t\t\t\t You arrived at the 5th room.\n");
-            printf("\n\n\t\t\t\t\t  You felt a little warmer.\n");
-            printf("\n\n\t\t\t\t  The silence was broken by a painful growl.\n");
+            printf("\n\n\t\t\t\t\t  You arrived at the 5th room.\n");
+            printf("\n\n\t\t\t\t\t   You felt a little warmer.\n");
+            printf("\n\n\t\t\t\t   The silence was broken by a painful growl.\n");
             printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
             printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
             getchar();
@@ -177,7 +181,6 @@ void gameloop(){
     printf("\n\t Your HP bar: %d", hp);
     actionText();
     printf("\n\t Look at your inventory typing '5'. ");
-    roomEvent = 0;
     directionF();
     clearScreen();
     printf("end of gameloop");

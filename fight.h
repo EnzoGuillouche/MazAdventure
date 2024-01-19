@@ -56,7 +56,7 @@ void fightRoom1(){
             strcpy(item, item2);
             addInventory();
             currentMazeCell = 1;
-            roomEvent = 1;
+            roomEvent1 = 1;
             transition();
             break;
         case 2:
@@ -183,7 +183,7 @@ void fightRoom4(){
                 printf("\t\t\t\t\t   ======================================\n");
                 printf("\n\t\t\t\tYou beat the monster with your dull knife. \n");
                 currentMazeCell = 4;
-                roomEvent = 1;
+                roomEvent4 = 1;
                 hp = 15;
                 transition();
                 break;
@@ -300,7 +300,7 @@ void healRoom(){
         printf("\t\t\t\t\t   |                            Enter ->|\n");
         printf("\t\t\t\t\t   ====================================== \n");
         currentMazeCell = 5;
-        roomEvent = 1;
+        roomEvent5 = 1;
         transition();
         gameloop();
     }
@@ -309,9 +309,9 @@ void healRoom(){
         printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t   ______ \n");
         printf("\t\t\t\t\t\t          _|o  o|_\n");
         printf("\t\t\t\t\t\t         /  \\/\\/  \\\n");
-        printf("\t\t\t\t\t\t        /          \\\n");
-        printf("\t\t\t\t\t\t       /  /______\\  \\ \n");
-        printf("\t\t\t\t\t\t      |'\\__________/'|  \n");
+        printf("\t\t\t\t\t\t        /     __   \\\n");
+        printf("\t\t\t\t\t\t       /  /_  \\ \\_\\ \\ \n");
+        printf("\t\t\t\t\t\t      |'\\__/   \\___/'|  \n");
         printf("\t\t\t\t\t   ======================================\n");
         printf("\t\t\t\t\t   |                                    |\n");
         printf("\t\t\t\t\t   |     It seems like a bit weaker     |\n");
@@ -321,7 +321,7 @@ void healRoom(){
         printf("\t\t\t\t\t   ====================================== ");
         printf("\n\n\t\t\t\t\t\t\t   (1) to rest ");
         printf("\n\n\t\t\t\t\t\t\t   (Any key) to leave  ");
-        scanf("%c", &choice);
+        scanf("%d", &choice);
         getchar();
         switch (choice)
         {
@@ -342,14 +342,14 @@ void healRoom(){
             printf("\t\t\t\t\t   |                            Enter ->|\n");
             printf("\t\t\t\t\t   ====================================== \n");
             currentMazeCell = 5;
-            roomEvent = 1;
+            roomEvent5 = 1;
             transition();
             break;
         
         default:
             clearScreen();
             currentMazeCell = 5;
-            roomEvent = 1;
+            roomEvent5 = 1;
             transition();
             break;
         }
