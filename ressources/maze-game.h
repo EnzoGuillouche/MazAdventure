@@ -44,7 +44,7 @@ void actionText(){
         printf("\n\n\t You can go to the right (1).");
         break;
     case 5:
-        printf("\n\n\t You can go to the right (1) or go upstairs (2).");
+        printf("\n\n\t You can go upstairs (2).");
         break;
     default:
         break;
@@ -160,7 +160,7 @@ void roomAction(){
             // printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
             // getchar();
             //Room9();
-            maze9();
+            nowInDevelopment();
             break;
         default:
             mazeBegin();
@@ -184,4 +184,12 @@ void gameloop(){
     directionF();
     clearScreen();
     printf("end of gameloop");
+}
+
+void nowInDevelopment(){
+    clearScreen();
+    printf("\n\n\n\t\t\t\t\tThis game is still in development.");
+    printf("\n\n\t\t\t\t\tI wish you enjoyed, and are waiting for more!");
+    getchar();
+    abort();
 }

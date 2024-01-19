@@ -2,7 +2,7 @@
 
 <br>
 
-# /!\ **THE GAME IS NOT FINISHED** /!\\ <br><br>
+# /!\ **THE GAME IS STILL IN DEVELOPMENT** /!\\ <br><br>
 
 ## What is this game dealing with?
 MazAdventure is a little game in C that I made during my C classes at ALGOSUP. <br><br>
