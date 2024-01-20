@@ -35,16 +35,20 @@ void actionText(){
     switch (currentMazeCell)
     {
     case 0:
-        printf("\n\n\t You can go to the right (1) or go upstairs (2).");
+        printf("\n\n\t You are located in room 0.");
+        printf("\n\t You can go to the right (1) or go upstairs (2).\n");
         break;
     case 1:
-        printf("\n\n\t You can go upstairs (2).");
+        printf("\n\n\t You are located in room 1.");
+        printf("\n\t You can go upstairs (2).\n");
         break;
     case 4:
-        printf("\n\n\t You can go to the right (1).");
+        printf("\n\n\t You are located in room 4.");
+        printf("\n\t You can go to the right (1).\n");
         break;
     case 5:
-        printf("\n\n\t You can go upstairs (2).");
+        printf("\n\n\t You are located in room 5.");
+        printf("\n\t You can go upstairs (2).\n");
         break;
     default:
         break;
@@ -53,39 +57,123 @@ void actionText(){
 }
 
 void directionF(){
-    printf("\n\n\t Choose your action:  ");
-    scanf("%d", &direction);
-    getchar();
-    switch (direction)
+    switch (currentMazeCell)
     {
-        case 1:
-            currentMazeCell = currentMazeCell + 1;
-            currentMaze();
-            break;
-        case 2:
-            currentMazeCell = currentMazeCell + 4;
-            currentMaze();
-            break;
-        case 3:
-            currentMazeCell = currentMazeCell - 1;
-            currentMaze();
-            break;
-        case 4:
-            currentMazeCell = currentMazeCell - 4;
-            currentMaze();
-            break;
-        case 5:
-            roomEvent1 = 1;
-            roomEvent4 = 1;
-            roomEvent5 = 1;
-            roomEvent9 = 1;
-            openInventory("inventory.txt");
-            break;
-        default:
-            clearScreen();
-            gameloop();
-            break;
+    case 0:
+        scanf("%d", &direction);
+        getchar();
+        switch (direction)
+        {
+            case 1:
+                currentMazeCell = currentMazeCell + 1;
+                currentMaze();
+                break;
+            case 2:
+                currentMazeCell = currentMazeCell + 4;
+                currentMaze();
+                break;
+            case 5:
+                roomEvent = 1;
+                openInventory("inventory.txt");
+                break;
+            default:
+                printf("\t You cannot go this way.");
+                getchar();
+                directionF();
+                break;
         }
+    case 1:
+        scanf("%d", &direction);
+        getchar();
+        switch (direction)
+        {
+            case 2:
+                currentMazeCell = currentMazeCell + 4;
+                currentMaze();
+                break;
+            case 5:
+                roomEvent = 1;
+                openInventory("inventory.txt");
+                break;
+            default:
+                printf("\t You cannot go this way.");
+                getchar();
+                gameloop();
+                break;
+            return;
+        }
+    case 4:
+        scanf("%d", &direction);
+        getchar();
+        switch (direction)
+        {
+            case 1:
+                currentMazeCell = currentMazeCell + 1;
+                currentMaze();
+                break;
+            case 5:
+                roomEvent = 1;
+                openInventory("inventory.txt");
+                break;
+            default:
+                printf("\t You cannot go this way.");
+                getchar();
+                gameloop();
+                break;
+            return;
+        }
+    case 5:
+        scanf("%d", &direction);
+        getchar();
+        switch (direction)
+        {
+            case 2:
+                currentMazeCell = currentMazeCell + 4;
+                currentMaze();
+                break;
+            case 5:
+                roomEvent = 1;
+                openInventory("inventory.txt");
+                break;
+            default:
+                printf("\t You cannot go this way.");
+                getchar();
+                gameloop();
+                break;
+            return;
+        }
+    
+    }
+    // switch (direction)
+    // {
+    //     case 1:
+    //         currentMazeCell = currentMazeCell + 1;
+    //         currentMaze();
+    //         break;
+    //     case 2:
+    //         currentMazeCell = currentMazeCell + 4;
+    //         currentMaze();
+    //         break;
+    //     case 3:
+    //         currentMazeCell = currentMazeCell - 1;
+    //         currentMaze();
+    //         break;
+    //     case 4:
+    //         currentMazeCell = currentMazeCell - 4;
+    //         currentMaze();
+    //         break;
+    //     case 5:
+    //         roomEvent1 = 1;
+    //         roomEvent4 = 1;
+    //         roomEvent5 = 1;
+    //         roomEvent9 = 1;
+    //         openInventory("inventory.txt");
+    //         break;
+    //     default:
+    //         clearScreen();
+    //         gameloop();
+    //         break;
+    //     }
     return;
 }
 
@@ -178,12 +266,16 @@ void transition(){
 
 void gameloop(){
     currentMaze();
-    printf("\n\t Your HP bar: %d", hp);
+    roomEvent = 0;
+    printf("\t Your HP bar: %d", hp);
     actionText();
     printf("\n\t Look at your inventory typing '5'. ");
+    printf("\n\n\t Choose your action:  ");
     directionF();
     clearScreen();
     printf("end of gameloop");
+    getchar();
+    gameloop();
 }
 
 void nowInDevelopment(){

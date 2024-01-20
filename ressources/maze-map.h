@@ -1,8 +1,5 @@
 int currentMazeCell = 0;
-int roomEvent1;
-int roomEvent4;
-int roomEvent5;
-int roomEvent9;
+int roomEvent;
 
 void currentMaze(){
     clearScreen();
@@ -10,7 +7,7 @@ void currentMaze(){
     {
         case 1:
             clearScreen();
-            switch (roomEvent1)
+            switch (roomEvent)
             {
             case 1:
                 maze1();
@@ -23,7 +20,7 @@ void currentMaze(){
             break;
         case 4:
             clearScreen();
-            switch (roomEvent4)
+            switch (roomEvent)
             {
             case 1:
                 maze4();
@@ -36,7 +33,7 @@ void currentMaze(){
             break;
         case 5:
             clearScreen();
-            switch (roomEvent5)
+            switch (roomEvent)
             {
             case 1:
                 maze5();
@@ -49,7 +46,7 @@ void currentMaze(){
             break;
         case 9:
             clearScreen();
-            switch (roomEvent9)
+            switch (roomEvent)
             {
             case 1:
                 maze9();
@@ -70,7 +67,6 @@ void currentMaze(){
 
 void mazeBegin(){
     clearScreen();
-    printf("    \n");
     printf("\n\t=======================================================================================================");
     printf("\n\t| 12                    _ _  13                   _ _  14                   _ _  15                   |");
     printf("\n\t|                                                 -->                       -->          EXIT         |");
@@ -97,7 +93,6 @@ void mazeBegin(){
 
 void maze1(){
     clearScreen();
-    printf("    \n");
     printf("\n\t=======================================================================================================");
     printf("\n\t| 12                    _ _  13                   _ _  14                   _ _  15                   |");
     printf("\n\t|                                                 -->                       -->          EXIT         |");
@@ -124,7 +119,6 @@ void maze1(){
 
 void maze4(){
     clearScreen();
-    printf("    \n");
     printf("\n\t=======================================================================================================");
     printf("\n\t| 12                    _ _  13                   _ _  14                   _ _  15                   |");
     printf("\n\t|                                                 -->                       -->          EXIT         |");
@@ -151,7 +145,6 @@ void maze4(){
 
 void maze5(){
     clearScreen();
-    printf("    \n");
     printf("\n\t=======================================================================================================");
     printf("\n\t| 12                    _ _  13                   _ _  14                   _ _  15                   |");
     printf("\n\t|                                                 -->                       -->          EXIT         |");
@@ -178,7 +171,6 @@ void maze5(){
 
 void maze9(){
     clearScreen();
-    printf("    \n");
     printf("\n\t=======================================================================================================");
     printf("\n\t| 12                    _ _  13                   _ _  14                   _ _  15                   |");
     printf("\n\t|                                                 -->                       -->          EXIT         |");
