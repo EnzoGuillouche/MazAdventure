@@ -13,7 +13,9 @@ You can move one room by room, encounter monsters and find traps.
 The choices will be displayed to know when to use certain keys.
 <br>
 ## How can I play?
-You just have to download and run the " MazAdventure.exe " to run the game.
+You just have to download and run the " MazAdventure.exe " to run the game. <br>
+The actual version of the game is directly visible in the directory. (**Do not mind the .exe in the resources folder if you see one.**) <br>
+Since the game development has not ended, the actual version of the game can contain several bugs (known or unknown).
 <br>
 ## Can I modify the game?
 Since nobody can publish anything in this repository but me, you can modify your version of the game, it's up to you. <br><br>
