@@ -73,13 +73,12 @@ void directionF(){
                 currentMaze();
                 break;
             case 5:
-                roomEvent = 1;
                 openInventory("inventory.txt");
                 break;
             default:
                 printf("\t You cannot go this way.");
                 getchar();
-                directionF();
+                gameloop();
                 break;
         }
     case 1:
@@ -92,7 +91,7 @@ void directionF(){
                 currentMaze();
                 break;
             case 5:
-                roomEvent = 1;
+                roomEvent1 = 1;
                 openInventory("inventory.txt");
                 break;
             default:
@@ -112,7 +111,7 @@ void directionF(){
                 currentMaze();
                 break;
             case 5:
-                roomEvent = 1;
+                roomEvent4 = 1;
                 openInventory("inventory.txt");
                 break;
             default:
@@ -132,7 +131,7 @@ void directionF(){
                 currentMaze();
                 break;
             case 5:
-                roomEvent = 1;
+                roomEvent5 = 1;
                 openInventory("inventory.txt");
                 break;
             default:
@@ -266,11 +265,27 @@ void transition(){
 
 void gameloop(){
     currentMaze();
-    roomEvent = 0;
     printf("\t Your HP bar: %d", hp);
     actionText();
     printf("\n\t Look at your inventory typing '5'. ");
     printf("\n\n\t Choose your action:  ");
+    switch (currentMazeCell)
+    {
+    case 1:
+        roomEvent1 = 0;
+        break;
+    case 4:
+        roomEvent4 = 0;
+        break;
+    case 5:
+        roomEvent5 = 0;
+        break;
+    case 9:
+        roomEvent9 = 0;
+        break;
+    default:
+        break;
+    }
     directionF();
     clearScreen();
     printf("end of gameloop");
