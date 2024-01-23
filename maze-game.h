@@ -1,21 +1,19 @@
 #include "maze-map.h"
 
-int hp = 20;
-int hpMonster = 10;
-int choice;
-int fightChoice;
-int direction;
-int positionX = 0;
-int positionY = 0;
-char item[] = "Dull Knife\n";
-char item2[] = "Warm Furr\n";
+int hp = 20;                    //HP variable
+int hpMonster = 10;             //monster HP variable
+int choice;                     //choice variable
+int fightChoice;                //fight choice variable
+int direction;                  //direction variable
+char item[] = "Dull Knife\n";   //item Dull Knife
+char item2[] = "Warm Furr\n";   //item Warm Furr
 
 void clearScreen() {
-    //printf("\033[2J\033[1;1H");
-    system("cls");
-}
+    //printf("\033[2J\033[1;1H"); //clear the console, not the terminal
+    system("cls");                //clear the terminal, not the console (recommended)
+}  
 
-void choiceMenu(){
+void choiceMenu(){  //intro function
     printf("\n\tPress Enter to play:  ");
     getchar();
     clearScreen();
@@ -31,7 +29,7 @@ void choiceMenu(){
 }
 
 
-void actionText(){
+void actionText(){  //function that specifies where you are and where you can go
     switch (currentMazeCell)
     {
     case 0:
@@ -56,7 +54,7 @@ void actionText(){
     
 }
 
-void directionF(){
+void directionF(){  //function that analyses where you want to go depending on where you currently are
     switch (currentMazeCell)
     {
     case 0:
@@ -143,40 +141,10 @@ void directionF(){
         }
     
     }
-    // switch (direction)
-    // {
-    //     case 1:
-    //         currentMazeCell = currentMazeCell + 1;
-    //         currentMaze();
-    //         break;
-    //     case 2:
-    //         currentMazeCell = currentMazeCell + 4;
-    //         currentMaze();
-    //         break;
-    //     case 3:
-    //         currentMazeCell = currentMazeCell - 1;
-    //         currentMaze();
-    //         break;
-    //     case 4:
-    //         currentMazeCell = currentMazeCell - 4;
-    //         currentMaze();
-    //         break;
-    //     case 5:
-    //         roomEvent1 = 1;
-    //         roomEvent4 = 1;
-    //         roomEvent5 = 1;
-    //         roomEvent9 = 1;
-    //         openInventory("inventory.txt");
-    //         break;
-    //     default:
-    //         clearScreen();
-    //         gameloop();
-    //         break;
-    //     }
     return;
 }
 
-int openInventory(const char* fileName){
+int openInventory(const char* fileName){    //opens the inventory file and displays it in-game
     clearScreen();
     printf("\n\t\t=========================");
     printf("\n\t\t| Inventory:            |\n");
@@ -200,14 +168,14 @@ int openInventory(const char* fileName){
     gameloop();
 }
 
-void addInventory(){
+void addInventory(){    //add an item into the inventory file 
     FILE* myFile = fopen("inventory.txt", "w+");
     fprintf(myFile, "\t\t - %s", item);
     fclose(myFile);
     return;
 }
 
-void roomAction(){
+void roomAction(){  //displays the scenario of the room in particular
     switch (currentMazeCell)
     {
         case 1:
@@ -217,18 +185,18 @@ void roomAction(){
             printf("\n\n\t\t\t\tHowever, a monster woke up in front of you. \n");
             printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
             getchar();
-            fightRoom1();
+            fightRoom1();   //switches to the content of the room
             break;
         case 4:
             printf("\n\n\t\t\t\tYou went upstairs, and arrived at the 4th room.\n");
             printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
             printf("\n\n\t\t\t\t\t  You found a dull knife.\n");
-            char item = "Dull Knife";
-            addInventory();
+            char item = "Dull Knife"; 
+            addInventory();            //adds the Dull Knife into the inventory
             printf("\n\n\t\t\t\t   A monster appeared and scared you. \n");
             printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
             getchar();
-            fightRoom4Surprise();
+            fightRoom4Surprise();   //switches to the content of the room
             break;
         case 5:
             printf("\n\n\t\t\t\t\t  You arrived at the 5th room.\n");
@@ -237,7 +205,7 @@ void roomAction(){
             printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
             printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
             getchar();
-            healRoom();
+            healRoom();   //switches to the content of the room
             break;
         case 9:
             // printf("\n\n\t\t\t\t\t You arrived at the 5th room.\n");
@@ -246,8 +214,8 @@ void roomAction(){
             // printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
             // printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
             // getchar();
-            //Room9();
-            nowInDevelopment();
+            //Room9();   //switches to the content of the room
+            nowInDevelopment(); //the next content had not been developed yet 
             break;
         default:
             mazeBegin();
@@ -257,19 +225,19 @@ void roomAction(){
     return;
 }
 
-void transition(){
+void transition(){  //a transition function
     printf("\n\t\t\t\tPress any key to continue:  ");
     getchar();
     gameloop();
 }
 
-void gameloop(){
-    currentMaze();
-    printf("\t Your HP bar: %d", hp);
-    actionText();
-    printf("\n\t Look at your inventory typing '5'. ");
-    printf("\n\n\t Choose your action:  ");
-    switch (currentMazeCell)
+void gameloop(){    //the function that the game executes the most
+    currentMaze();  //displays the current maze depending on in which room you are in
+    printf("\t Your HP bar: %d", hp);   //displays the player's current HP 
+    actionText();   //tells the player what he can do
+    printf("\n\t Look at your inventory typing '5'. ");  //tells the player that he can open his inventory
+    printf("\n\n\t Choose your action:  ");    
+    switch (currentMazeCell)  //resets the room's event
     {
     case 1:
         roomEvent1 = 0;
@@ -286,14 +254,14 @@ void gameloop(){
     default:
         break;
     }
-    directionF();
-    clearScreen();
-    printf("end of gameloop");
+    directionF();   //calls the direction function
+    clearScreen();  
+    printf("end of gameloop, unexpected behavior, enter to end the program");  //if the process access to this, it isn't normal
     getchar();
-    gameloop();
+    abort();
 }
 
-void nowInDevelopment(){
+void nowInDevelopment(){    //displays a "now in development" message just before ending the program
     clearScreen();
     printf("\n\n\n\t\t\t\t\tThis game is still in development.");
     printf("\n\n\t\t\t\t\tI wish you enjoyed, and are waiting for more!");
