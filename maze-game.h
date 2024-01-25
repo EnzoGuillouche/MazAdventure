@@ -95,6 +95,7 @@ void directionF(){  //function that analyses where you want to go depending on w
             default:
                 printf("\t You cannot go this way.");
                 getchar();
+                roomEvent1 = 1;
                 gameloop();
                 break;
             return;
@@ -115,6 +116,7 @@ void directionF(){  //function that analyses where you want to go depending on w
             default:
                 printf("\t You cannot go this way.");
                 getchar();
+                roomEvent4 = 1;
                 gameloop();
                 break;
             return;
@@ -135,6 +137,7 @@ void directionF(){  //function that analyses where you want to go depending on w
             default:
                 printf("\t You cannot go this way.");
                 getchar();
+                roomEvent5 = 1;
                 gameloop();
                 break;
             return;
@@ -179,33 +182,88 @@ void roomAction(){  //displays the scenario of the room in particular
     switch (currentMazeCell)
     {
         case 1:
-            printf("\n\n\t\t\t\tYou crossed the door, and arrived at the 1st room.\n");
-            printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
-            printf("\n\n\t\t\t\tYou found some moisty furniture, nothing interesting.\n");
-            printf("\n\n\t\t\t\tHowever, a monster woke up in front of you. \n");
-            printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+            printf("\n\n\t\t\t\t You crossed the door, and arrived at the 1st room.\n");
+            printf("\n\n\t\t\t\t\t    What do you want to do?  \n\n\n\t\t\t\t(1) to explore the room  (2) to open the inventory.\n"); //choice of action
+            scanf("%d", &choice);
             getchar();
-            fightRoom1();   //switches to the content of the room
-            break;
+            switch (choice)
+            {
+                case 1:
+                    clearScreen();
+                    printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
+                    printf("\n\n\t\t\t\tYou found some moisty furniture, nothing interesting.\n");
+                    printf("\n\n\t\t\t\tHowever, a monster woke up in front of you. \n");
+                    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+                    getchar();
+                    fightRoom1();   //switches to the content of the room
+                    break;
+                case 2:
+                    openInventory("inventory.txt"); 
+                    clearScreen();
+                    roomAction();
+                    break;
+                default:
+                    clearScreen();
+                    roomAction();
+                    break;
+                break;
+            }
         case 4:
-            printf("\n\n\t\t\t\tYou went upstairs, and arrived at the 4th room.\n");
-            printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
-            printf("\n\n\t\t\t\t\t  You found a dull knife.\n");
-            char item = "Dull Knife"; 
-            addInventory();            //adds the Dull Knife into the inventory
-            printf("\n\n\t\t\t\t   A monster appeared and scared you. \n");
-            printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+            printf("\n\n\t\t\t\t  You went upstairs, and arrived at the 4th room.\n");
+            printf("\n\n\t\t\t\t\t    What do you want to do?  \n\n\n\t\t\t\t(1) to explore the room  (2) to open the inventory.\n"); //choice of action
+            scanf("%d", &choice);
             getchar();
-            fightRoom4Surprise();   //switches to the content of the room
+            switch (choice)
+            {
+                case 1:
+                    clearScreen();
+                    printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
+                    printf("\n\n\t\t\t\t\t\t You found a dull knife.\n");
+                    char item = "Dull Knife"; 
+                    addInventory();            //adds the Dull Knife into the inventory
+                    printf("\n\n\t\t\t\t\t   A monster appeared and scared you. \n");
+                    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+                    getchar();
+                    fightRoom4Surprise();   //switches to the content of the room
+                    break;
+                case 2:
+                    openInventory("inventory.txt"); 
+                    clearScreen();
+                    roomAction();
+                    break;
+                default:
+                    clearScreen();
+                    roomAction();
+                    break;
+            }
             break;
         case 5:
-            printf("\n\n\t\t\t\t\t  You arrived at the 5th room.\n");
-            printf("\n\n\t\t\t\t\t   You felt a little warmer.\n");
-            printf("\n\n\t\t\t\t   The silence was broken by a painful growl.\n");
-            printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
-            printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+            printf("\n\n\t\t\t\t\t   You arrived at the 5th room.\n");
+            //printf("\n\n\t\t\t\t\t   You felt a little warmer.\n");
+            printf("\n\n\t\t\t\t\t      What do you want to do?  \n\n\n\t\t\t\t(1) to explore the room  (2) to open the inventory.\n"); //choice of action
+            scanf("%d", &choice);
             getchar();
-            healRoom();   //switches to the content of the room
+            switch (choice)
+            {
+                case 1:
+                    clearScreen();                    
+                    printf("\n\n\t\t\t\t\t  You walked through the room.\n");
+                    printf("\n\n\t\t\t\t   The silence was broken by a dreadful growl.\n");
+                    printf("\n\n\t\t\t\t\t  You went towards that noise.\n");
+                    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+                    getchar();
+                    healRoom();   //switches to the content of the room
+                    break;
+                case 2:
+                    openInventory("inventory.txt");
+                    clearScreen();
+                    roomAction();
+                    break;
+                default:
+                    clearScreen();
+                    roomAction();
+                    break;
+            }
             break;
         case 9:
             // printf("\n\n\t\t\t\t\t You arrived at the 5th room.\n");

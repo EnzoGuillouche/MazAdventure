@@ -105,7 +105,7 @@ void fightRoom4Surprise(){
     hpMonster = 20;
     //********* Monster *********
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
-    printf("\t\t\t\t\t\t       ___|-  -|___\n");
+    printf("\t\t\t\t\t\t       ___|\\  /|___\n");
     printf("\t\t\t\t\t\t      /    \\__/    \\\n");
     printf("\t\t\t\t\t\t     /              \\\n");
     printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
