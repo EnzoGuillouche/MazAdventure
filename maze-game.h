@@ -14,16 +14,16 @@ void clearScreen() {
 }  
 
 void choiceMenu(){  //intro function
-    printf("\n\tPress Enter to play:  ");
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t\tPress Enter to play:  ");
     getchar();
     clearScreen();
-    printf("\n\n\t\tYou fell into the oblivion, into a dark and moisty room.");
-    printf("\n\t\tThis place looks like it's another dimension, the darkside of the real world.");
-    printf("\n\n\t\tYou realise that you need to get out of this place, or.. something would happen.");
-    printf("\n\n\n\t\tYou have to move throughout a maze to find the exit. ");
-    printf("\n\t\tYou can move one room by room, encounter monsters and find traps. ");
-    printf("\n\n\n\t\tYou'll execute actions with numbers and the Enter key. \n\t\tThe choices will be displayed to know when to use certain keys. ");
-    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+    printf("\n\n\t\t\t\t\t\t\t\t\t\tYou fell into the oblivion, into a dark and moisty room.");
+    printf("\n\n\t\t\t\t\t\t\t\t\t\tThis place looks like it's another dimension, the darkside of the real world.");
+    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou realise that you need to get out of this place, or.. something would happen.");
+    printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou have to move throughout a maze to find the exit. ");
+    printf("\n\n\t\t\t\t\t\t\t\t\t\tYou can move one room by room, encounter monsters and find traps. ");
+    printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou'll execute actions with numbers and the Enter key. \n\n\t\t\t\t\t\t\t\t\t\tThe choices will be displayed to know when to use certain keys. ");
+    printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPress Enter to continue:  ");
     getchar();
     return;
 }
