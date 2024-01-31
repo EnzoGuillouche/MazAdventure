@@ -150,59 +150,12 @@ void fightRoom4(){
     switch (fightChoice)
     {
         case 1:
-            clearScreen();
-            hpMonster = hpMonster - 10;
-            //********* Monster *********
-            printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
-            printf("\t\t\t\t\t\t       ___|-  -|___\n");
-            printf("\t\t\t\t\t\t      /    \\__/    \\\n");
-            printf("\t\t\t\t\t\t     /              \\\n");
-            printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
-            printf("\t\t\t\t\t\t   /'\\___        ___/`\\\n");
-            printf("\t\t\t\t\t   ======================================\n");
-            printf("\t\t\t\t\t   |               FIGHT                |\n");
-            printf("\t\t\t\t\t   |------------------------------------|\n");
-            printf("\t\t\t\t\t   |          [ Your HP: %d ]           |\n", hp);
-            printf("\t\t\t\t\t   |                                    |\n");
-            printf("\t\t\t\t\t   |        [ Monster HP:  %d ]         |\n", hpMonster);
-            printf("\t\t\t\t\t   |                                    |\n");
-            printf("\t\t\t\t\t   |                                    |\n");
-            printf("\t\t\t\t\t   ======================================\n");
-            printf("\n\t\t\t\tYou hit the monster with your dull knife. \n");
-            printf("\t\t\t\tIt lost 10 HP.  ");
-            getchar();
-            switch (hpMonster)
-            {
-            case 0:
+            if (hpMonster > 10){
                 clearScreen();
+                hpMonster = hpMonster - 10;
                 //********* Monster *********
                 printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
-                printf("\t\t\t\t\t\t       ___|x  x|___\n");
-                printf("\t\t\t\t\t\t      /    \\__/    \\\n");
-                printf("\t\t\t\t\t\t     /              \\\n");
-                printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
-                printf("\t\t\t\t\t\t   /'\\___        ___/`\\\n");
-                printf("\t\t\t\t\t   ======================================\n");
-                printf("\t\t\t\t\t   |               FIGHT                |\n");
-                printf("\t\t\t\t\t   |------------------------------------|\n");
-                printf("\t\t\t\t\t   |          [ Your HP: %d ]           |\n", hp);
-                printf("\t\t\t\t\t   |                                    |\n");
-                printf("\t\t\t\t\t   |        [ Monster HP:  %d ]          |\n", hpMonster);
-                printf("\t\t\t\t\t   |                                    |\n");
-                printf("\t\t\t\t\t   |                                    |\n");
-                printf("\t\t\t\t\t   ======================================\n");
-                printf("\n\t\t\t\tYou've beat the monster with your dull knife. \n");
-                currentMazeCell = 4;
-                roomEvent4 = 1;
-                hp = 15;
-                transition();
-                break;
-            default:
-                clearScreen();
-                hp = hp - 5;
-                //********* Monster *********
-                printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
-                printf("\t\t\t\t\t\t       ___|\\  /|___\n");
+                printf("\t\t\t\t\t\t       ___|-  -|___\n");
                 printf("\t\t\t\t\t\t      /    \\__/    \\\n");
                 printf("\t\t\t\t\t\t     /              \\\n");
                 printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
@@ -216,11 +169,132 @@ void fightRoom4(){
                 printf("\t\t\t\t\t   |                                    |\n");
                 printf("\t\t\t\t\t   |                                    |\n");
                 printf("\t\t\t\t\t   ======================================\n");
-                printf("\n\t\t\t\tThe monster attacks back, you lost 5 HP.  ");
+                printf("\n\t\t\t\tYou hit the monster with your dull knife. \n");
+                printf("\t\t\t\tIt lost 10 HP.  ");
                 getchar();
-                fightRoom4();
-                break;
+                switch (hpMonster)
+                {
+                case 0:
+                    clearScreen();
+                    //********* Monster *********
+                    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
+                    printf("\t\t\t\t\t\t       ___|x  x|___\n");
+                    printf("\t\t\t\t\t\t      /    \\__/    \\\n");
+                    printf("\t\t\t\t\t\t     /              \\\n");
+                    printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
+                    printf("\t\t\t\t\t\t   /'\\___        ___/`\\\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\t\t\t\t\t   |               FIGHT                |\n");
+                    printf("\t\t\t\t\t   |------------------------------------|\n");
+                    printf("\t\t\t\t\t   |          [ Your HP: %d ]           |\n", hp);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |        [ Monster HP:  %d ]          |\n", hpMonster);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\n\t\t\t\tYou've beat the monster with your dull knife. \n");
+                    currentMazeCell = 4;
+                    roomEvent4 = 1;
+                    transition();
+                    break;
+                default:
+                    clearScreen();
+                    hp = hp - 5;
+                    //********* Monster *********
+                    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
+                    printf("\t\t\t\t\t\t       ___|\\  /|___\n");
+                    printf("\t\t\t\t\t\t      /    \\__/    \\\n");
+                    printf("\t\t\t\t\t\t     /              \\\n");
+                    printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
+                    printf("\t\t\t\t\t\t   /'\\___        ___/`\\\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\t\t\t\t\t   |               FIGHT                |\n");
+                    printf("\t\t\t\t\t   |------------------------------------|\n");
+                    printf("\t\t\t\t\t   |          [ Your HP: %d ]           |\n", hp);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |        [ Monster HP:  %d ]         |\n", hpMonster);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\n\t\t\t\tThe monster attacks back, you lost 5 HP.  ");
+                    getchar();
+                    fightRoom4();
+                    break;
+                }
             }
+            else{
+                clearScreen();
+                hpMonster = hpMonster - 10;
+                //********* Monster *********
+                printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
+                printf("\t\t\t\t\t\t       ___|-  -|___\n");
+                printf("\t\t\t\t\t\t      /    \\__/    \\\n");
+                printf("\t\t\t\t\t\t     /              \\\n");
+                printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
+                printf("\t\t\t\t\t\t   /'\\___        ___/`\\\n");
+                printf("\t\t\t\t\t   ======================================\n");
+                printf("\t\t\t\t\t   |               FIGHT                |\n");
+                printf("\t\t\t\t\t   |------------------------------------|\n");
+                printf("\t\t\t\t\t   |          [ Your HP: %d ]           |\n", hp);
+                printf("\t\t\t\t\t   |                                    |\n");
+                printf("\t\t\t\t\t   |        [ Monster HP:  %d ]          |\n", hpMonster);
+                printf("\t\t\t\t\t   |                                    |\n");
+                printf("\t\t\t\t\t   |                                    |\n");
+                printf("\t\t\t\t\t   ======================================\n");
+                printf("\n\t\t\t\tYou hit the monster with your dull knife. \n");
+                printf("\t\t\t\tIt lost 10 HP.  ");
+                getchar();
+                switch (hpMonster)
+                {
+                case 0:
+                    clearScreen();
+                    //********* Monster *********
+                    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
+                    printf("\t\t\t\t\t\t       ___|x  x|___\n");
+                    printf("\t\t\t\t\t\t      /    \\__/    \\\n");
+                    printf("\t\t\t\t\t\t     /              \\\n");
+                    printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
+                    printf("\t\t\t\t\t\t   /'\\___        ___/`\\\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\t\t\t\t\t   |               FIGHT                |\n");
+                    printf("\t\t\t\t\t   |------------------------------------|\n");
+                    printf("\t\t\t\t\t   |          [ Your HP: %d ]           |\n", hp);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |        [ Monster HP:  %d ]          |\n", hpMonster);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\n\t\t\t\tYou've beat the monster with your dull knife. \n");
+                    currentMazeCell = 4;
+                    roomEvent4 = 1;
+                    transition();
+                    break;
+                default:
+                    clearScreen();
+                    hp = hp - 5;
+                    //********* Monster *********
+                    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t          .-/\\-.   \n");
+                    printf("\t\t\t\t\t\t       ___|\\  /|___\n");
+                    printf("\t\t\t\t\t\t      /    \\__/    \\\n");
+                    printf("\t\t\t\t\t\t     /              \\\n");
+                    printf("\t\t\t\t\t\t    // /_        _\\  \\\n");
+                    printf("\t\t\t\t\t\t   /'\\___        ___/`\\\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\t\t\t\t\t   |               FIGHT                |\n");
+                    printf("\t\t\t\t\t   |------------------------------------|\n");
+                    printf("\t\t\t\t\t   |          [ Your HP: %d ]           |\n", hp);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |        [ Monster HP:  %d ]         |\n", hpMonster);
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   |                                    |\n");
+                    printf("\t\t\t\t\t   ======================================\n");
+                    printf("\n\t\t\t\tThe monster attacks back, you lost 5 HP.  ");
+                    getchar();
+                    fightRoom4();
+                    break;
+                }
+            }
+            
             break;
         case 2:
             clearScreen();

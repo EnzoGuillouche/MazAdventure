@@ -14,10 +14,11 @@ void clearScreen() {
 }  
 
 void choiceMenu(){  //intro function
-    printf("\n\t\t\t\t\t\t\t\t\t\t\t\tPress Enter to play:  ");
+    printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t     Press Enter to play  ");
+    printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\tThis game is a minimalist project done during student free time. \n\n\t\t\t\tAny resemblance to other products or intellectual properties is purely coincidental and is intended as a homage to the inspirations that have shaped our creative journey. ");
     getchar();
     clearScreen();
-    printf("\n\n\t\t\t\t\t\t\t\t\t\tYou fell into the oblivion, into a dark and moisty room.");
+    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou fell into the oblivion, into a dark and moisty room.");
     printf("\n\n\t\t\t\t\t\t\t\t\t\tThis place looks like it's another dimension, the darkside of the real world.");
     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou realise that you need to get out of this place, or.. something would happen.");
     printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou have to move throughout a maze to find the exit. ");
@@ -33,20 +34,20 @@ void actionText(){  //function that specifies where you are and where you can go
     switch (currentMazeCell)
     {
     case 0:
-        printf("\n\n\t You are located in room 0.");
-        printf("\n\t You can go to the right (1) or go upstairs (2).\n");
+        printf("\n\n\t\t\t\t\t\t\t You are located in room 0.");
+        printf("\n\t\t\t\t\t\t\t You can go to the right (1) or go upstairs (2).\n");
         break;
     case 1:
-        printf("\n\n\t You are located in room 1.");
-        printf("\n\t You can go upstairs (2).\n");
+        printf("\n\n\t\t\t\t\t\t\t You are located in room 1.");
+        printf("\n\t\t\t\t\t\t\t You can go upstairs (2).\n");
         break;
     case 4:
-        printf("\n\n\t You are located in room 4.");
-        printf("\n\t You can go to the right (1).\n");
+        printf("\n\n\t\t\t\t\t\t\t You are located in room 4.");
+        printf("\n\t\t\t\t\t\t\t You can go to the right (1).\n");
         break;
     case 5:
-        printf("\n\n\t You are located in room 5.");
-        printf("\n\t You can go upstairs (2).\n");
+        printf("\n\n\t\t\t\t\t\t\t You are located in room 5.");
+        printf("\n\t\t\t\t\t\t\t You can go upstairs (2).\n");
         break;
     default:
         break;
@@ -74,7 +75,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 openInventory("inventory.txt");
                 break;
             default:
-                printf("\t You cannot go this way.");
+                printf("\n\t\t\t\t\t\t\t You cannot go this way.");
                 getchar();
                 gameloop();
                 break;
@@ -93,7 +94,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 openInventory("inventory.txt");
                 break;
             default:
-                printf("\t You cannot go this way.");
+                printf("\n\t\t\t\t\t\t\t You cannot go this way.");
                 getchar();
                 roomEvent1 = 1;
                 gameloop();
@@ -114,7 +115,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 openInventory("inventory.txt");
                 break;
             default:
-                printf("\t You cannot go this way.");
+                printf("\n\t\t\t\t\t\t\t You cannot go this way.");
                 getchar();
                 roomEvent4 = 1;
                 gameloop();
@@ -135,7 +136,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 openInventory("inventory.txt");
                 break;
             default:
-                printf("\t You cannot go this way.");
+                printf("\n\t\t\t\t\t\t\t You cannot go this way.");
                 getchar();
                 roomEvent5 = 1;
                 gameloop();
@@ -149,9 +150,10 @@ void directionF(){  //function that analyses where you want to go depending on w
 
 int openInventory(const char* fileName){    //opens the inventory file and displays it in-game
     clearScreen();
-    printf("\n\t\t=========================");
-    printf("\n\t\t| Inventory:            |\n");
-    printf("\n\t\t|                       |\n");
+    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t=========================\n");
+    printf("\t\t\t\t\t\t\t\t\t\t|       Inventory:      |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
     FILE* myFile = fopen(fileName, "r");
     if(myFile == NULL)
     {
@@ -164,16 +166,17 @@ int openInventory(const char* fileName){    //opens the inventory file and displ
         putchar(ch);
 
     fclose(myFile);
-    printf("\n\t\t|                       |");
-    printf("\n\t\t=========================");
-    printf("\n\n\n\n\t\tLeave the inventory by pressing Enter: ");
+    printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t=========================\n");
+    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t  Leave the inventory by pressing Enter: ");
     getchar();
     gameloop();
 }
 
 void addInventory(){    //add an item into the inventory file 
     FILE* myFile = fopen("inventory.txt", "w+");
-    fprintf(myFile, "\t\t - %s", item);
+    fprintf(myFile, "\t\t\t\t\t\t\t\t\t\t   - %s\n", item);
     fclose(myFile);
     return;
 }
@@ -182,18 +185,18 @@ void roomAction(){  //displays the scenario of the room in particular
     switch (currentMazeCell)
     {
         case 1:
-            printf("\n\n\t\t\t\t You crossed the door, and arrived at the 1st room.\n");
-            printf("\n\n\t\t\t\t\t    What do you want to do?  \n\n\n\t\t\t\t(1) to explore the room  (2) to open the inventory.\n"); //choice of action
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t You crossed the door, and arrived at the 1st room.\n");
+            printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t     What do you want to do?  \n\n\n\t\t\t\t\t\t\t\t\t\t\t(1) to explore the room  (2) to open the inventory. "); //choice of action
             scanf("%d", &choice);
             getchar();
             switch (choice)
             {
                 case 1:
                     clearScreen();
-                    printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
-                    printf("\n\n\t\t\t\tYou found some moisty furniture, nothing interesting.\n");
-                    printf("\n\n\t\t\t\tHowever, a monster woke up in front of you. \n");
-                    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou are walking in this room, looking for something that might help you.\n");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\tYou found some moisty furniture, nothing interesting.\n");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\tHowever, a monster woke up in front of you. \n");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPress Enter to continue:  ");
                     getchar();
                     fightRoom1();   //switches to the content of the room
                     break;
@@ -291,10 +294,10 @@ void transition(){  //a transition function
 
 void gameloop(){    //the function that the game executes the most
     currentMaze();  //displays the current maze depending on in which room you are in
-    printf("\t Your HP bar: %d", hp);   //displays the player's current HP 
+    printf("\t\t\t\t\t\t\t Your HP bar: %d", hp);   //displays the player's current HP 
     actionText();   //tells the player what he can do
-    printf("\n\t Look at your inventory typing '5'. ");  //tells the player that he can open his inventory
-    printf("\n\n\t Choose your action:  ");    
+    printf("\n\t\t\t\t\t\t\t Look at your inventory typing '5'. ");  //tells the player that he can open his inventory
+    printf("\n\n\t\t\t\t\t\t\t Choose your action:  ");    
     switch (currentMazeCell)  //resets the room's event
     {
     case 1:

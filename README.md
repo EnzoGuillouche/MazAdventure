@@ -21,3 +21,6 @@ Since the game development has not ended, the actual version of the game can con
 ## Can I modify the game?<br>
 Since nobody can publish anything in this repository but me, you can modify your version of the game, it's up to you. <br><br>
 I would even be grateful to see what changes you would implement.
+<br><br><br>
+## This game is a minimalist project done during student free time. This game is distributed for non-commercial purposes only. 
+## Any resemblance to other products or intellectual properties is purely coincidental and is intended as a homage to the inspirations that have shaped our creative journey. 
