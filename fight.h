@@ -531,3 +531,33 @@ void healRoom(){
         }
     }
 }
+
+void Room9(){
+    clearScreen();
+    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t            These monsters look like twins. ");
+    getchar();
+    clearScreen();
+    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |             - hElLo ThErE!               |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |             - HeLlO tHeRe!               |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+    getchar();
+    nowInDevelopment();
+}

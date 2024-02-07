@@ -194,7 +194,7 @@ void roomAction(){  //displays the scenario of the room in particular
                 case 1:
                     clearScreen();
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou are walking in this room, looking for something that might help you.\n");
-                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\tYou found some moisty furniture, nothing interesting.\n");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t You found some moisty furniture, nothing interesting.\n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\tHowever, a monster woke up in front of you. \n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPress Enter to continue:  ");
                     getchar();
@@ -268,14 +268,28 @@ void roomAction(){  //displays the scenario of the room in particular
             }
             break;
         case 9:
-            // printf("\n\n\t\t\t\t\t You arrived at the 5th room.\n");
-            // printf("\n\n\t\t\t\t\t  You felt a little warmer.\n");
-            // printf("\n\n\t\t\t\t  The silence was broken by a painful growl.\n");
-            // printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
-            // printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
-            // getchar();
-            //Room9();   //switches to the content of the room
-            nowInDevelopment(); //the next content had not been developed yet 
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t You climbed a ladder to reach the 9th room.\n");
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t   What do you want to do?  \n\n\n\t\t\t\t\t\t\t\t\t\t\t     (1) to explore the room  (2) to open the inventory.   "); //choice of action
+            scanf("%d", &choice);
+            getchar();
+            switch (choice)
+            {
+            case 1:
+                clearScreen();
+                printf("blabla");
+                getchar();
+                Room9();   //switches to the content of the room
+                break;
+            case 2:
+                openInventory("inventory.txt");
+                clearScreen();
+                roomAction();
+                break;
+            default:
+                clearScreen();
+                roomAction();
+                break;
+            }
             break;
         default:
             mazeBegin();
@@ -316,7 +330,7 @@ void gameloop(){    //the function that the game executes the most
     }
     directionF();   //calls the direction function
     clearScreen();  
-    printf("end of gameloop, unexpected behavior, enter to end the program");  //if the process access to this, it isn't normal
+    printf("\n\tend of gameloop, unexpected behavior, enter to end the program");  //if the process access to this, it isn't normal
     getchar();
     abort();
 }
@@ -324,7 +338,7 @@ void gameloop(){    //the function that the game executes the most
 void nowInDevelopment(){    //displays a "now in development" message just before ending the program
     clearScreen();
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\tThis game is still in development.\n");
-    printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t  I wish you enjoyed, and are waiting for more!");
+    printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t  I wish you enjoyed, and are waiting for more!  ");
     getchar();
     abort();
 }
