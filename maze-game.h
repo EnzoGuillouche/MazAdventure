@@ -225,7 +225,7 @@ void roomAction(){  //displays the scenario of the room in particular
                     char item = "Dull Knife"; 
                     addInventory();            //adds the Dull Knife into the inventory
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t          A monster appeared and scared you. \n");
-                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t               Press Enter to continue:  ");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t              Press Enter to continue:  ");
                     getchar();
                     fightRoom4Surprise();   //switches to the content of the room
                     break;
@@ -276,7 +276,10 @@ void roomAction(){  //displays the scenario of the room in particular
             {
             case 1:
                 clearScreen();
-                printf("blabla");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t              You walked a bit, and heard a noise of digging.");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t  You came closer to the noise, and then saw two little monsters digging.");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t             They didn't look harmful, so you came even closer. ");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
                 getchar();
                 Room9();   //switches to the content of the room
                 break;

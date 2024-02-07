@@ -12,9 +12,11 @@ keybd_event(VK_MENU,0x38,KEYEVENTF_KEYUP,0);
 int main(void){ // main function
     fullscreen();
     clearScreen();
+    printf("\033[0;33m");
     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t     ===================================");
     printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t     **** Welcome to MazAdventure! ****");   //start message
     printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t     ===================================");
+    printf("\033[0m");
     printf("\n\n\n\n"); 
     choiceMenu();                                       //call the intro function
     gameloop();                                         //call the rest of stuff

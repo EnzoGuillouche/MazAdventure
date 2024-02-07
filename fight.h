@@ -107,13 +107,15 @@ void fightRoom4Surprise(){
     hp = hp - 5;
     hpMonster = 20;
     //********* Monster *********
+    printf("\033[0;31m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        .-/*\\-.   \n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|\\   /|___\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\___/    \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   /               \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /   /         \\   \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /   /_         _\\   \\\n");
-    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n"); 
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                  FIGHT                   |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |------------------------------------------|\n");
@@ -134,6 +136,7 @@ void fightRoom4(){
     //***************************
     clearScreen();
     //********* Monster *********
+    printf("\033[0;33m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        .-/*\\-.   \n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|-   -|___\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\___/    \\\n");
@@ -141,6 +144,7 @@ void fightRoom4(){
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /   /         \\   \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /   /_         _\\   \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n");
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                  FIGHT                   |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |------------------------------------------|\n");
@@ -161,6 +165,7 @@ void fightRoom4(){
                 clearScreen();
                 hpMonster = hpMonster - 10;
                 //********* Monster *********
+                printf("\033[0;33m");
                 printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        .-/*\\-.   \n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|-   -|___\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\___/    \\\n");
@@ -168,6 +173,7 @@ void fightRoom4(){
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /   /         \\   \\\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /   /_         _\\   \\\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n");
+                printf("\033[0m");
                 printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t      |                  FIGHT                   |\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t      |------------------------------------------|\n");
@@ -212,6 +218,7 @@ void fightRoom4(){
                     clearScreen();
                     hp = hp - 5;
                     //********* Monster *********
+                    printf("\033[0;31m");
                     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        .-/*\\-.   \n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|\\   /|___\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\___/    \\\n");
@@ -219,6 +226,7 @@ void fightRoom4(){
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /   /         \\   \\\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /   /_         _\\   \\\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n");
+                    printf("\033[0m");
                     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t      |                  FIGHT                   |\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t      |------------------------------------------|\n");
@@ -239,6 +247,7 @@ void fightRoom4(){
                 clearScreen();
                 hpMonster = hpMonster - 10;
                 //********* Monster *********
+                printf("\033[0;33m");
                 printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        .-/*\\-.   \n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|-   -|___\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\___/    \\\n");
@@ -246,6 +255,7 @@ void fightRoom4(){
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /   /         \\   \\\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /   /_         _\\   \\\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n");
+                printf("\033[0m");
                 printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t      |                  FIGHT                   |\n");
                 printf("\t\t\t\t\t\t\t\t\t\t\t      |------------------------------------------|\n");
@@ -290,6 +300,7 @@ void fightRoom4(){
                     clearScreen();
                     hp = hp - 5;
                     //********* Monster *********
+                    printf("\033[0;31m");
                     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        .-/*\\-.   \n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|\\   /|___\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\___/    \\\n");
@@ -297,6 +308,7 @@ void fightRoom4(){
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /   /         \\   \\\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /   /_         _\\   \\\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n");
+                    printf("\033[0m");
                     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t      |                  FIGHT                   |\n");
                     printf("\t\t\t\t\t\t\t\t\t\t\t      |------------------------------------------|\n");
@@ -318,6 +330,7 @@ void fightRoom4(){
         case 2:
             clearScreen();
             //********* Monster *********
+            printf("\033[0;33m");
             printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        .-/*\\-.   \n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|-   -|___\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\___/    \\\n");
@@ -325,6 +338,7 @@ void fightRoom4(){
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /   /         \\   \\\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /   /_         _\\   \\\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t/'\\____         ____/'\\\n");
+            printf("\033[0m");
             printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      |                  FIGHT                   |\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      |------------------------------------------|\n");
@@ -355,6 +369,7 @@ void fightRoom4(){
 void healRoom(){
     clearScreen();
     //********* Monster *********
+    printf("\033[0;33m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -362,6 +377,7 @@ void healRoom(){
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
@@ -375,6 +391,7 @@ void healRoom(){
     printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t      The monster heard you, and turned around. ");
     getchar();
     clearScreen();
+    printf("\033[0;33m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -382,6 +399,7 @@ void healRoom(){
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
@@ -394,6 +412,7 @@ void healRoom(){
     printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================  ");
     getchar();
     clearScreen();
+    printf("\033[0;33m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -401,6 +420,7 @@ void healRoom(){
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
@@ -413,6 +433,7 @@ void healRoom(){
     printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================ ");
     getchar();
     clearScreen();
+    printf("\033[0;33m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -420,6 +441,7 @@ void healRoom(){
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |       You might have already met my      |\n");
@@ -433,6 +455,7 @@ void healRoom(){
     getchar();
     if (hp > 19){
         clearScreen();
+        printf("\033[0;33m");
         printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -440,6 +463,7 @@ void healRoom(){
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+        printf("\033[0m");
         printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
@@ -457,6 +481,7 @@ void healRoom(){
     }
     else{
         clearScreen();
+        printf("\033[0;36m");
         printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -464,6 +489,7 @@ void healRoom(){
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+        printf("\033[0m");
         printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      |           You seem a bit weaker          |\n");
@@ -483,6 +509,7 @@ void healRoom(){
         case 1:
             hp = 20;
             clearScreen();
+            printf("\033[0;33m");
             printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -490,6 +517,7 @@ void healRoom(){
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+            printf("\033[0m");
             printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
@@ -507,6 +535,7 @@ void healRoom(){
         
         default:
             clearScreen();
+            printf("\033[0;33m");
             printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t        _______   \n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t     ___|o   o|___\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t    /    \\/^\\/    \\\n");
@@ -514,6 +543,7 @@ void healRoom(){
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t  /  /           \\  \\\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t /  /_____________\\  \\\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t\t\t|'\\_________________/'|\n");
+            printf("\033[0m");
             printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
@@ -534,20 +564,24 @@ void healRoom(){
 
 void Room9(){
     clearScreen();
+    printf("\033[0;32m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t            These monsters look like twins. ");
     getchar();
     clearScreen();
+    printf("\033[0;32m");
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+    printf("\033[0m");
     printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      |             - hElLo ThErE!               |\n");
