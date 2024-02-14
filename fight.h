@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
 #include "maze-game.h"
 
 
@@ -498,7 +497,7 @@ void healRoom(){
         printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      |          Would you like to rest?         |\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
-        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
         printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t       (1) to rest ");
         printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t       (2) to leave  ");
@@ -593,5 +592,162 @@ void Room9(){
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     getchar();
-    nowInDevelopment();
+    clearScreen();
+    printf("\033[0;32m");
+    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+    printf("\033[0m");
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |       - wE nOt ExPeCt YoU bE hErE        |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |       - We NoT eXpEcT yOu bE HeRe        |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+    getchar();
+    clearScreen();
+    printf("\033[0;32m");
+    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+    printf("\033[0m");
+    printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |              - wE bE tRaDeRs             |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                wAnNa TrAdE?              |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |              - We Be TrAdErS             |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                WaNnA tRaDe?              |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+    getchar();
+    if (item[16] = 'W'){
+        clearScreen();
+        printf("\033[0;32m");
+        printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+        printf("\033[0m");
+        printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |          - yOu GoT a WaRm FuRr           |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |            - AnD wE nEeD iT!             |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+        getchar();
+        clearScreen();
+        printf("\033[0;32m");
+        printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+        printf("\033[0m");
+        printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |         - dO yOu WaNt To TrAdE?          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |         - We WoUlD bE gRaTeFuL!          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+        printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t       (1) to trade ");
+        printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t       (2) to ignore  ");
+        scanf("%d", &choice);
+        getchar();
+        switch (choice)
+        {
+        case 1:
+            clearScreen();
+            printf("\033[0;32m");
+            printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+            printf("\033[0m");
+            printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |            - nIcE! tHaNk YoU!            |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |           - HeRe'S yOuR tHiNg.           |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+            strcpy(item, item3);
+            addInventory();
+            roomEvent9 = 1;
+            currentMazeCell = 9;
+            openInventory("inventory.txt");
+            nowInDevelopment();
+            break;
+        default:
+            clearScreen();
+            printf("\033[0;32m");
+            printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+            printf("\033[0m");
+            printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |          - kEeP yOuR wArm FuRr           |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |             - GoOd ByE tHen              |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+            printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+            roomEvent9 = 1;
+            currentMazeCell = 9;
+            openInventory("inventory.txt");
+            nowInDevelopment();
+            break;
+        }
+    }
+    else{
+        clearScreen();
+        printf("\033[0;32m");
+        printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t (o\\ o o /o) (o\\ o o /o)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ( \\  o  / ) ( \\  o  / )\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t   (>  <)       (>  <)\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t\t ((__)__)       (__(__))\n");
+        printf("\033[0m");
+        printf("\n\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |      - bUt YoU gOt NoThInG tO TrAde      |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |             - GoOd ByE tHen              |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
+        printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
+        roomEvent9 = 1;
+        currentMazeCell =9;
+        openInventory("inventory.txt");
+        nowInDevelopment();
+    }
 }

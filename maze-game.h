@@ -1,12 +1,15 @@
 #include "maze-map.h"
+#include <strings.h>
 
 int hp = 20;                    //HP variable
 int hpMonster = 10;             //monster HP variable
 int choice;                     //choice variable
 int fightChoice;                //fight choice variable
 int direction;                  //direction variable
-char item[] = "Dull Knife\n";   //item Dull Knife
+char item[];
+char item1[] = "Dull Knife\n";   //item Dull Knife
 char item2[] = "Warm Furr\n";   //item Warm Furr
+char item3[] = "Damaged Helmet\n";   //item Damaged Helmet
 
 void clearScreen() {
     //printf("\033[2J\033[1;1H"); //clear the console, not the terminal
@@ -222,7 +225,7 @@ void roomAction(){  //displays the scenario of the room in particular
                     clearScreen();
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou are walking in this room, looking for something that might help you.\n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t       You found a dull knife.\n");
-                    char item = "Dull Knife"; 
+                    strcpy(item, item1);
                     addInventory();            //adds the Dull Knife into the inventory
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t          A monster appeared and scared you. \n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t              Press Enter to continue:  ");
@@ -276,9 +279,9 @@ void roomAction(){  //displays the scenario of the room in particular
             {
             case 1:
                 clearScreen();
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t              You walked a bit, and heard a noise of digging.");
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t  You came closer to the noise, and then saw two little monsters digging.");
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t             They didn't look harmful, so you came even closer. ");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t              You walked a bit, and heard a noise of digging.");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t  You came closer to the noise, and then saw two little monsters digging.");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t             They didn't look harmful, so you came even closer. ");
                 printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
                 getchar();
                 Room9();   //switches to the content of the room
