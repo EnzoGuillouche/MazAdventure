@@ -630,7 +630,7 @@ void Room9(){
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     getchar();
-    if (item[16] = 'W'){
+    if (strcmp(item, item2) == NULL){
         clearScreen();
         printf("\033[0;32m");
         printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
