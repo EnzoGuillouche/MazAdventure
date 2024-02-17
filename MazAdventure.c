@@ -1,4 +1,4 @@
-#include "fight.h"
+#include "src/fight.h"
 #include <windows.h>
 
 void fullscreen() // put the fullscreen
