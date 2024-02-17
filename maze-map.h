@@ -5,7 +5,6 @@ int roomEvent5;
 int roomEvent9;
 
 void currentMaze(){
-    clearScreen();
     switch (currentMazeCell)
     {
         case 1:
@@ -48,6 +47,32 @@ void currentMaze(){
             }
             break;
         case 9:
+            clearScreen();
+            switch (roomEvent9)
+            {
+            case 1:
+                maze9();
+                break;
+            
+            default:
+                roomAction();
+                break;
+            }
+            break;
+        case 10:
+            clearScreen();
+            switch (roomEvent9)
+            {
+            case 1:
+                maze9();
+                break;
+            
+            default:
+                roomAction();
+                break;
+            }
+            break;
+        case 13:
             clearScreen();
             switch (roomEvent9)
             {

@@ -697,8 +697,7 @@ void Room9(){
             addInventory();
             roomEvent9 = 1;
             currentMazeCell = 9;
-            openInventory("inventory.txt");
-            nowInDevelopment();
+            transition();
             break;
         default:
             clearScreen();
@@ -721,8 +720,7 @@ void Room9(){
             printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
             roomEvent9 = 1;
             currentMazeCell = 9;
-            openInventory("inventory.txt");
-            nowInDevelopment();
+            transition();
             break;
         }
     }
@@ -746,8 +744,12 @@ void Room9(){
         printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
         printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
         roomEvent9 = 1;
-        currentMazeCell =9;
-        openInventory("inventory.txt");
-        nowInDevelopment();
+        currentMazeCell = 9;
+        transition();
     }
+}
+
+void Room13(){
+    printf("room 13 fight");
+    nowInDevelopment();
 }

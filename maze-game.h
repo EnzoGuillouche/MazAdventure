@@ -52,6 +52,10 @@ void actionText(){  //function that specifies where you are and where you can go
         printf("\n\n\t\t\t\t\t\t\t You are located in room 5.");
         printf("\n\t\t\t\t\t\t\t You can go upstairs (2).\n");
         break;
+    case 9:
+        printf("\n\n\t\t\t\t\t\t\t You are located in room 9.");
+        printf("\n\t\t\t\t\t\t\t You can go to the right (1) or go upstairs (2).\n");
+        break;
     default:
         break;
     }
@@ -146,7 +150,31 @@ void directionF(){  //function that analyses where you want to go depending on w
                 break;
             return;
         }
-    
+    case 9:
+        scanf("%d", &direction);
+        getchar();
+        switch (direction)
+        {
+            case 1:
+                currentMazeCell = currentMazeCell + 1;
+                currentMaze();
+                break;
+            case 2:
+                currentMazeCell = currentMazeCell + 4;
+                currentMaze();
+                break;
+            case 5:
+                roomEvent9 = 1;
+                openInventory("inventory.txt");
+                break;
+            default:
+                printf("\n\t\t\t\t\t\t\t You cannot go this way.");
+                getchar();
+                roomEvent9 = 1;
+                gameloop();
+                break;
+            return;
+        }
     }
     return;
 }
@@ -285,6 +313,33 @@ void roomAction(){  //displays the scenario of the room in particular
                 printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
                 getchar();
                 Room9();   //switches to the content of the room
+                break;
+            case 2:
+                openInventory("inventory.txt");
+                clearScreen();
+                roomAction();
+                break;
+            default:
+                clearScreen();
+                roomAction();
+                break;
+            }
+            break;
+        case 10:
+            nowInDevelopment();
+            break;
+        case 13:
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t You kept going straight ahead, and arrived at the 13th room.\n");
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t  What do you want to do?  \n\n\n\t\t\t\t\t\t\t\t\t\t\t     (1) to explore the room  (2) to open the inventory.   "); //choice of action
+            scanf("%d", &choice);
+            getchar();
+            switch (choice)
+            {
+            case 1:
+                clearScreen();
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
+                getchar();
+                Room13();   //switches to the content of the room
                 break;
             case 2:
                 openInventory("inventory.txt");
