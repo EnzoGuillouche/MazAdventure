@@ -5,7 +5,6 @@ int roomEvent5;
 int roomEvent9;
 
 void currentMaze(){
-    clearScreen();
     switch (currentMazeCell)
     {
         case 1:
@@ -60,6 +59,32 @@ void currentMaze(){
                 break;
             }
             break;
+        case 10:
+            clearScreen();
+            switch (roomEvent9)
+            {
+            case 1:
+                maze9();
+                break;
+            
+            default:
+                roomAction();
+                break;
+            }
+            break;
+        case 13:
+            clearScreen();
+            switch (roomEvent9)
+            {
+            case 1:
+                maze9();
+                break;
+            
+            default:
+                roomAction();
+                break;
+            }
+            break;
         default:
             mazeBegin();
             break;
@@ -91,10 +116,10 @@ void mazeBegin(){
     printf("\n\t\t\t\t\t\t\t\t|                         _ _                         _ _                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
-    printf("\n\t\t\t\t\t\t\t\t===========|###|=======================|##|=========================|##|========================|##|===========");
+    printf("\n\t\t\t\t\t\t\t\t===========|###|========================|##|========================|##|========================|##|===========");
     printf("\n\t\t\t\t\t\t\t\t|  0                      _ _  1                      | |  2                      _ _  3                      |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
-    printf("\n\t\t\t\t\t\t\t\t|          YOU            -->                         | |                                                     |");
+    printf("\n\t\t\t\t\t\t\t\t|           YOU           -->                         | |                                                     |");
     printf("\n\t\t\t\t\t\t\t\t|                         _ _                         | |                         _ _                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
@@ -125,10 +150,10 @@ void maze1(){
     printf("\n\t\t\t\t\t\t\t\t|                         _ _                         _ _                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
-    printf("\n\t\t\t\t\t\t\t\t===========|###|=======================|##|=========================|##|========================|##|===========");
+    printf("\n\t\t\t\t\t\t\t\t===========|###|========================|##|========================|##|========================|##|===========");
     printf("\n\t\t\t\t\t\t\t\t|  0                      _ _  1                      | |  2                      _ _  3                      |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
-    printf("\n\t\t\t\t\t\t\t\t|                         -->          YOU            | |                                                     |");
+    printf("\n\t\t\t\t\t\t\t\t|                         -->           YOU           | |                                                     |");
     printf("\n\t\t\t\t\t\t\t\t|                         _ _                         | |                         _ _                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
@@ -158,7 +183,7 @@ void maze4(){
     printf("\n\t\t\t\t\t\t\t\t|                         _ _                         _ _                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
-    printf("\n\t\t\t\t\t\t\t\t===========|###|=======================|##|=========================|##|========================|##|===========");
+    printf("\n\t\t\t\t\t\t\t\t===========|###|========================|##|========================|##|========================|##|===========");
     printf("\n\t\t\t\t\t\t\t\t|  0                      _ _  1                      | |  2                      _ _  3                      |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
@@ -192,7 +217,7 @@ void maze5(){
     printf("\n\t\t\t\t\t\t\t\t|                         _ _                         _ _                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
-    printf("\n\t\t\t\t\t\t\t\t===========|###|=======================|##|=========================|##|========================|##|===========");
+    printf("\n\t\t\t\t\t\t\t\t===========|###|========================|##|========================|##|========================|##|===========");
     printf("\n\t\t\t\t\t\t\t\t|  0                      _ _  1                      | |  2                      _ _  3                      |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
@@ -226,7 +251,7 @@ void maze9(){
     printf("\n\t\t\t\t\t\t\t\t|                         _ _                         _ _                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         <--                         | |                         |");
-    printf("\n\t\t\t\t\t\t\t\t===========|###|=======================|##|=========================|##|========================|##|===========");
+    printf("\n\t\t\t\t\t\t\t\t===========|###|========================|##|========================|##|========================|##|===========");
     printf("\n\t\t\t\t\t\t\t\t|  0                      _ _  1                      | |  2                      _ _  3                      |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");
     printf("\n\t\t\t\t\t\t\t\t|                         -->                         | |                                                     |");

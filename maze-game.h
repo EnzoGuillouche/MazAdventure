@@ -1,12 +1,15 @@
 #include "maze-map.h"
+#include <strings.h>
 
 int hp = 20;                    //HP variable
 int hpMonster = 10;             //monster HP variable
 int choice;                     //choice variable
 int fightChoice;                //fight choice variable
 int direction;                  //direction variable
-char item[] = "Dull Knife\n";   //item Dull Knife
+char item[];
+char item1[] = "Dull Knife\n";   //item Dull Knife
 char item2[] = "Warm Furr\n";   //item Warm Furr
+char item3[] = "Damaged Helmet\n";   //item Damaged Helmet
 
 void clearScreen() {
     //printf("\033[2J\033[1;1H"); //clear the console, not the terminal
@@ -48,6 +51,10 @@ void actionText(){  //function that specifies where you are and where you can go
     case 5:
         printf("\n\n\t\t\t\t\t\t\t You are located in room 5.");
         printf("\n\t\t\t\t\t\t\t You can go upstairs (2).\n");
+        break;
+    case 9:
+        printf("\n\n\t\t\t\t\t\t\t You are located in room 9.");
+        printf("\n\t\t\t\t\t\t\t You can go to the right (1) or go upstairs (2).\n");
         break;
     default:
         break;
@@ -143,7 +150,31 @@ void directionF(){  //function that analyses where you want to go depending on w
                 break;
             return;
         }
-    
+    case 9:
+        scanf("%d", &direction);
+        getchar();
+        switch (direction)
+        {
+            case 1:
+                currentMazeCell = currentMazeCell + 1;
+                currentMaze();
+                break;
+            case 2:
+                currentMazeCell = currentMazeCell + 4;
+                currentMaze();
+                break;
+            case 5:
+                roomEvent9 = 1;
+                openInventory("inventory.txt");
+                break;
+            default:
+                printf("\n\t\t\t\t\t\t\t You cannot go this way.");
+                getchar();
+                roomEvent9 = 1;
+                gameloop();
+                break;
+            return;
+        }
     }
     return;
 }
@@ -194,7 +225,7 @@ void roomAction(){  //displays the scenario of the room in particular
                 case 1:
                     clearScreen();
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou are walking in this room, looking for something that might help you.\n");
-                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\tYou found some moisty furniture, nothing interesting.\n");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t You found some moisty furniture, nothing interesting.\n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\tHowever, a monster woke up in front of you. \n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPress Enter to continue:  ");
                     getchar();
@@ -212,20 +243,20 @@ void roomAction(){  //displays the scenario of the room in particular
                 break;
             }
         case 4:
-            printf("\n\n\t\t\t\t  You went upstairs, and arrived at the 4th room.\n");
-            printf("\n\n\t\t\t\t\t    What do you want to do?  \n\n\n\t\t\t\t(1) to explore the room  (2) to open the inventory.\n"); //choice of action
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t  You went upstairs, and arrived at the 4th room.\n");
+            printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t    What do you want to do?  \n\n\n\t\t\t\t\t\t\t\t\t\t\t(1) to explore the room  (2) to open the inventory.  "); //choice of action
             scanf("%d", &choice);
             getchar();
             switch (choice)
             {
                 case 1:
                     clearScreen();
-                    printf("\n\n\t\t\tYou are walking in this room, looking for something that might help you.\n");
-                    printf("\n\n\t\t\t\t\t\t You found a dull knife.\n");
-                    char item = "Dull Knife"; 
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou are walking in this room, looking for something that might help you.\n");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t       You found a dull knife.\n");
+                    strcpy(item, item1);
                     addInventory();            //adds the Dull Knife into the inventory
-                    printf("\n\n\t\t\t\t\t   A monster appeared and scared you. \n");
-                    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t          A monster appeared and scared you. \n");
+                    printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t              Press Enter to continue:  ");
                     getchar();
                     fightRoom4Surprise();   //switches to the content of the room
                     break;
@@ -241,19 +272,18 @@ void roomAction(){  //displays the scenario of the room in particular
             }
             break;
         case 5:
-            printf("\n\n\t\t\t\t\t   You arrived at the 5th room.\n");
-            //printf("\n\n\t\t\t\t\t   You felt a little warmer.\n");
-            printf("\n\n\t\t\t\t\t      What do you want to do?  \n\n\n\t\t\t\t(1) to explore the room  (2) to open the inventory.\n"); //choice of action
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t   You arrived at the 5th room.\n");
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t     What do you want to do?  \n\n\n\t\t\t\t\t\t\t\t\t\t\t(1) to explore the room  (2) to open the inventory.   "); //choice of action
             scanf("%d", &choice);
             getchar();
             switch (choice)
             {
                 case 1:
                     clearScreen();                    
-                    printf("\n\n\t\t\t\t\t  You walked through the room.\n");
-                    printf("\n\n\t\t\t\t   The silence was broken by a dreadful growl.\n");
-                    printf("\n\n\t\t\t\t\t  You went towards that noise.\n");
-                    printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t  You walked through the room.\n");
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t   The silence was broken by a dreadful growl.\n");
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t  You went towards that noise.\n");
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
                     getchar();
                     healRoom();   //switches to the content of the room
                     break;
@@ -269,14 +299,58 @@ void roomAction(){  //displays the scenario of the room in particular
             }
             break;
         case 9:
-            // printf("\n\n\t\t\t\t\t You arrived at the 5th room.\n");
-            // printf("\n\n\t\t\t\t\t  You felt a little warmer.\n");
-            // printf("\n\n\t\t\t\t  The silence was broken by a painful growl.\n");
-            // printf("\n\n\t\t\t\t\t  You went forward that noise.\n");
-            // printf("\n\n\n\n\n\n\n\n\t\tPress Enter to continue:  ");
-            // getchar();
-            //Room9();   //switches to the content of the room
-            nowInDevelopment(); //the next content had not been developed yet 
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t You climbed a ladder to reach the 9th room.\n");
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t   What do you want to do?  \n\n\n\t\t\t\t\t\t\t\t\t\t\t     (1) to explore the room  (2) to open the inventory.   "); //choice of action
+            scanf("%d", &choice);
+            getchar();
+            switch (choice)
+            {
+            case 1:
+                clearScreen();
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t              You walked a bit, and heard a noise of digging.");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t  You came closer to the noise, and then saw two little monsters digging.");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t             They didn't look harmful, so you came even closer. ");
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
+                getchar();
+                Room9();   //switches to the content of the room
+                break;
+            case 2:
+                openInventory("inventory.txt");
+                clearScreen();
+                roomAction();
+                break;
+            default:
+                clearScreen();
+                roomAction();
+                break;
+            }
+            break;
+        case 10:
+            nowInDevelopment();
+            break;
+        case 13:
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t You kept going straight ahead, and arrived at the 13th room.\n");
+            printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t  What do you want to do?  \n\n\n\t\t\t\t\t\t\t\t\t\t\t     (1) to explore the room  (2) to open the inventory.   "); //choice of action
+            scanf("%d", &choice);
+            getchar();
+            switch (choice)
+            {
+            case 1:
+                clearScreen();
+                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
+                getchar();
+                Room13();   //switches to the content of the room
+                break;
+            case 2:
+                openInventory("inventory.txt");
+                clearScreen();
+                roomAction();
+                break;
+            default:
+                clearScreen();
+                roomAction();
+                break;
+            }
             break;
         default:
             mazeBegin();
@@ -287,7 +361,7 @@ void roomAction(){  //displays the scenario of the room in particular
 }
 
 void transition(){  //a transition function
-    printf("\n\t\t\t\tPress any key to continue:  ");
+    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\tPress any key to continue:  ");
     getchar();
     gameloop();
 }
@@ -317,15 +391,17 @@ void gameloop(){    //the function that the game executes the most
     }
     directionF();   //calls the direction function
     clearScreen();  
-    printf("end of gameloop, unexpected behavior, enter to end the program");  //if the process access to this, it isn't normal
+    printf("\n\tend of gameloop, unexpected behavior, enter to end the program");  //if the process access to this, it isn't normal
     getchar();
+    clearScreen();
     abort();
 }
 
 void nowInDevelopment(){    //displays a "now in development" message just before ending the program
     clearScreen();
-    printf("\n\n\n\t\t\t\t\tThis game is still in development.");
-    printf("\n\n\t\t\t\t\tI wish you enjoyed, and are waiting for more!");
+    printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\tThis game is still in development.\n");
+    printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t  I wish you enjoyed, and are waiting for more!  ");
     getchar();
+    clearScreen();
     abort();
 }
