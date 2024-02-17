@@ -393,6 +393,7 @@ void gameloop(){    //the function that the game executes the most
     clearScreen();  
     printf("\n\tend of gameloop, unexpected behavior, enter to end the program");  //if the process access to this, it isn't normal
     getchar();
+    clearScreen();
     abort();
 }
 
@@ -401,5 +402,6 @@ void nowInDevelopment(){    //displays a "now in development" message just befor
     printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\tThis game is still in development.\n");
     printf("\n\n\t\t\t\t\t\t\t\t\t\t\t\t  I wish you enjoyed, and are waiting for more!  ");
     getchar();
+    clearScreen();
     abort();
 }
