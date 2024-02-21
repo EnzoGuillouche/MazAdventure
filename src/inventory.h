@@ -1,9 +1,25 @@
-#include <strings.h>
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <conio.h>
 
-char item[];
-char item1[] = "Dull Knife\n";   //item Dull Knife
-char item2[] = "Warm Furr\n";   //item Warm Furr
-char item3[] = "Damaged Helmet\n";   //item Damaged Helmet
+
+typedef struct inventory
+{
+    char name[50];
+} item_t;
+
+item_t item, item1, item2, item3;
+
+// Directly assigning string literals to the array
+void assignItems(item_t a, item_t b, item_t c, item_t d){
+    a.name, "NULL\n";
+    b.name, "Dull Knife\n";
+    c.name, "Warm Furr\n";
+    d.name, "Damaged Helmet\n";
+}
+
 
 
 
@@ -33,9 +49,9 @@ int openInventory(const char* fileName){    //opens the inventory file and displ
     gameloop();
 }
 
-void addInventory(){    //add an item into the inventory file 
+void addInventory(item_t object){    //add an item into the inventory file 
     FILE* myFile = fopen("inventory.txt", "w+");
-    fprintf(myFile, "\t\t\t\t\t\t\t\t\t\t   - %s\n", item);
+    fprintf(myFile, "\t\t\t\t\t\t\t\t\t\t   - %s\n", object.name);
     fclose(myFile);
     return;
 }

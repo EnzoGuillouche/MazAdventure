@@ -1,3 +1,5 @@
+#include "inventory.h"
+
 int currentMazeCell = 0;
 int roomEvent1;
 int roomEvent4;

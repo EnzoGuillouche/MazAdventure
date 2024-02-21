@@ -1,5 +1,4 @@
 #include "maze-map.h"
-#include "inventory.h"
 
 int hp = 20;                    //HP variable
 int hpMonster = 10;             //monster HP variable
@@ -217,8 +216,8 @@ void roomAction(){  //displays the scenario of the room in particular
                     clearScreen();
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou are walking in this room, looking for something that might help you.\n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t       You found a dull knife.\n");
-                    strcpy(item, item1);
-                    addInventory();            //adds the Dull Knife into the inventory
+                    strcpy(item.name, item1.name);
+                    addInventory(item);            //adds the Dull Knife into the inventory
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t          A monster appeared and scared you. \n");
                     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t              Press Enter to continue:  ");
                     getchar();

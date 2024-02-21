@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
 #include "maze-game.h"
 
 
@@ -57,8 +54,8 @@ void fightRoom1(){
             printf("\n\n\t\t\t\t\t\t\t\t\t\t\tYou hit critically the poor monster that just woke up. \n");
             printf("\n\t\t\t\t\t\t\t\t\t\t\tIt fainted. \n");
             printf("\n\n\t\t\t\t\t\t\t\t\t\t\tYou took the monster's furr to warm you up. \n");
-            strcpy(item, item2);
-            addInventory();
+            strcpy(item.name, item2.name);
+            addInventory(item);
             currentMazeCell = 1;
             roomEvent1 = 1;
             transition();
@@ -630,7 +627,7 @@ void Room9(){
     printf("\t\t\t\t\t\t\t\t\t\t\t      |                                 Enter -> |\n");
     printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
     getchar();
-    if (strcmp(item, item2) == NULL){
+    if (strcmp(item.name, item2.name) == NULL){
         clearScreen();
         printf("\033[0;32m");
         printf("\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t (^\\_____/^) (^\\_____/^)\n");
@@ -693,8 +690,8 @@ void Room9(){
             printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      |                                          |\n");
             printf("\t\t\t\t\t\t\t\t\t\t\t      ============================================\n");
-            strcpy(item, item3);
-            addInventory();
+            strcpy(item.name, item3.name);
+            addInventory(item);
             roomEvent9 = 1;
             currentMazeCell = 9;
             transition();
