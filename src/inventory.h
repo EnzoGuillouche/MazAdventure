@@ -1,5 +1,11 @@
 #include <strings.h>
 
+char item[];
+char item1[] = "Dull Knife\n";   //item Dull Knife
+char item2[] = "Warm Furr\n";   //item Warm Furr
+char item3[] = "Damaged Helmet\n";   //item Damaged Helmet
+
+
 
 int openInventory(const char* fileName){    //opens the inventory file and displays it in-game
     clearScreen();

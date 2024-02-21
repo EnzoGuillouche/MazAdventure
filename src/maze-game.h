@@ -6,10 +6,6 @@ int hpMonster = 10;             //monster HP variable
 int choice;                     //choice variable
 int fightChoice;                //fight choice variable
 int direction;                  //direction variable
-char item[];
-char item1[] = "Dull Knife\n";   //item Dull Knife
-char item2[] = "Warm Furr\n";   //item Warm Furr
-char item3[] = "Damaged Helmet\n";   //item Damaged Helmet
 
 void clearScreen() {
     //printf("\033[2J\033[1;1H"); //clear the console, not the terminal
