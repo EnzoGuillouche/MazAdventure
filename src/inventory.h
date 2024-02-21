@@ -12,28 +12,31 @@ typedef struct inventory
 
 item_t item, item1, item2, item3;
 
-// Directly assigning string literals to the array
-void assignItems(item_t a, item_t b, item_t c, item_t d){
-    a.name, "NULL\n";
-    b.name, "Dull Knife\n";
-    c.name, "Warm Furr\n";
-    d.name, "Damaged Helmet\n";
+
+void assignItems(item_t item, item_t item1, item_t item2, item_t item3){
+    strcpy(item.name, "empty");
+    strcpy(item1.name, "Dull Knife");
+    strcpy(item2.name, "Warm Furr");
+    strcpy(item3.name, "Damaged Helmet");
 }
 
 
 
 
-int openInventory(const char* fileName){    //opens the inventory file and displays it in-game
+
+int openInventory(const char* fileName, item_t object){    //opens the inventory file and displays it in-game
     clearScreen();
     printf("\n\n\n\n\n\t\t\t\t\t\t\t\t\t\t=========================\n");
     printf("\t\t\t\t\t\t\t\t\t\t|       Inventory:      |\n");
     printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
     printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
+    printf("\t\t\t\t\t\t\t\t\t\t| ");
     FILE* myFile = fopen(fileName, "r");
     if(myFile == NULL)
     {
-        fputs("Cannot open the file\n", stderr);
-        return 1;
+        fputs("Error: Cannot open the file\n", stderr);
+        sleep(3);
+        abort();
     }
     
     char ch;
@@ -41,6 +44,15 @@ int openInventory(const char* fileName){    //opens the inventory file and displ
         putchar(ch);
 
     fclose(myFile);
+    if (object.name[0] == 'e'){
+        printf("\t\t\t\t\t\t\t\t\t\t                      |\n");}
+    else if (object.name[0] == 'D'){
+        if (object.name[1] == 'u'){
+            printf("\t\t\t\t\t\t\t\t\t\t              |\n");}
+        else if (object.name[1] == 'a'){
+            printf("\t\t\t\t\t\t\t\t\t\t          |\n");}}
+    else{
+        printf("\t\t\t\t\t\t\t\t\t\t               |\n");}
     printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
     printf("\t\t\t\t\t\t\t\t\t\t|                       |\n");
     printf("\t\t\t\t\t\t\t\t\t\t=========================\n");
@@ -51,7 +63,19 @@ int openInventory(const char* fileName){    //opens the inventory file and displ
 
 void addInventory(item_t object){    //add an item into the inventory file 
     FILE* myFile = fopen("inventory.txt", "w+");
-    fprintf(myFile, "\t\t\t\t\t\t\t\t\t\t   - %s\n", object.name);
-    fclose(myFile);
-    return;
+    if (object.name[0] != 'D' || object.name[0] != 'W'){
+        if (object.name[0] != 'e'){
+            printf("Error: Item %s not found.\n", object.name);
+            sleep(3);
+            abort();}
+        else {
+            printf("Error: Allocation issue occured with %s.\n", object.name);
+            sleep(3);
+            abort();}
+    }
+    else{
+        fprintf(myFile, "- %s\n", object.name);
+        fclose(myFile);
+        return;
+    }
 }

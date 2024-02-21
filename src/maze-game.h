@@ -24,6 +24,7 @@ void choiceMenu(){  //intro function
     printf("\n\n\n\n\t\t\t\t\t\t\t\t\t\tYou'll execute actions with numbers and the Enter key. \n\n\t\t\t\t\t\t\t\t\t\tThe choices will be displayed to know when to use certain keys. ");
     printf("\n\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t\t\t\tPress Enter to continue:  ");
     getchar();
+    assignItems(item, item1, item2, item3);
     return;
 }
 
@@ -74,7 +75,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 currentMaze();
                 break;
             case 5:
-                openInventory("inventory.txt");
+                openInventory("inventory.txt", item);
                 break;
             default:
                 printf("\n\t\t\t\t\t\t\t You cannot go this way.");
@@ -93,7 +94,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 break;
             case 5:
                 roomEvent1 = 1;
-                openInventory("inventory.txt");
+                openInventory("inventory.txt", item);
                 break;
             default:
                 printf("\n\t\t\t\t\t\t\t You cannot go this way.");
@@ -114,7 +115,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 break;
             case 5:
                 roomEvent4 = 1;
-                openInventory("inventory.txt");
+                openInventory("inventory.txt", item);
                 break;
             default:
                 printf("\n\t\t\t\t\t\t\t You cannot go this way.");
@@ -135,7 +136,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 break;
             case 5:
                 roomEvent5 = 1;
-                openInventory("inventory.txt");
+                openInventory("inventory.txt", item);
                 break;
             default:
                 printf("\n\t\t\t\t\t\t\t You cannot go this way.");
@@ -160,7 +161,7 @@ void directionF(){  //function that analyses where you want to go depending on w
                 break;
             case 5:
                 roomEvent9 = 1;
-                openInventory("inventory.txt");
+                openInventory("inventory.txt", item);
                 break;
             default:
                 printf("\n\t\t\t\t\t\t\t You cannot go this way.");
@@ -195,7 +196,7 @@ void roomAction(){  //displays the scenario of the room in particular
                     fightRoom1();   //switches to the content of the room
                     break;
                 case 2:
-                    openInventory("inventory.txt"); 
+                    openInventory("inventory.txt", item);
                     clearScreen();
                     roomAction();
                     break;
@@ -224,7 +225,7 @@ void roomAction(){  //displays the scenario of the room in particular
                     fightRoom4Surprise();   //switches to the content of the room
                     break;
                 case 2:
-                    openInventory("inventory.txt"); 
+                    openInventory("inventory.txt", item);
                     clearScreen();
                     roomAction();
                     break;
@@ -251,7 +252,7 @@ void roomAction(){  //displays the scenario of the room in particular
                     healRoom();   //switches to the content of the room
                     break;
                 case 2:
-                    openInventory("inventory.txt");
+                    openInventory("inventory.txt", item);
                     clearScreen();
                     roomAction();
                     break;
@@ -268,24 +269,24 @@ void roomAction(){  //displays the scenario of the room in particular
             getchar();
             switch (choice)
             {
-            case 1:
-                clearScreen();
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t              You walked a bit, and heard a noise of digging.");
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t  You came closer to the noise, and then saw two little monsters digging.");
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t             They didn't look harmful, so you came even closer. ");
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
-                getchar();
-                Room9();   //switches to the content of the room
-                break;
-            case 2:
-                openInventory("inventory.txt");
-                clearScreen();
-                roomAction();
-                break;
-            default:
-                clearScreen();
-                roomAction();
-                break;
+                case 1:
+                    clearScreen();
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t              You walked a bit, and heard a noise of digging.");
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t  You came closer to the noise, and then saw two little monsters digging.");
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t             They didn't look harmful, so you came even closer. ");
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
+                    getchar();
+                    Room9();   //switches to the content of the room
+                    break;
+                case 2:
+                    openInventory("inventory.txt", item);
+                    clearScreen();
+                    roomAction();
+                    break;
+                default:
+                    clearScreen();
+                    roomAction();
+                    break;
             }
             break;
         case 10:
@@ -298,21 +299,21 @@ void roomAction(){  //displays the scenario of the room in particular
             getchar();
             switch (choice)
             {
-            case 1:
-                clearScreen();
-                printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
-                getchar();
-                Room13();   //switches to the content of the room
-                break;
-            case 2:
-                openInventory("inventory.txt");
-                clearScreen();
-                roomAction();
-                break;
-            default:
-                clearScreen();
-                roomAction();
-                break;
+                case 1:
+                    clearScreen();
+                    printf("\n\n\n\t\t\t\t\t\t\t\t\t\t\t\t\t    Press Enter to continue:  ");
+                    getchar();
+                    Room13();   //switches to the content of the room
+                    break;
+                case 2:
+                    openInventory("inventory.txt", item);
+                    clearScreen();
+                    roomAction();
+                    break;
+                default:
+                    clearScreen();
+                    roomAction();
+                    break;
             }
             break;
         default:

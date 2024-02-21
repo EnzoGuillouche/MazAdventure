@@ -19,6 +19,5 @@ int main(void){ // main function
     printf("\033[0m");
     printf("\n\n\n\n"); 
     choiceMenu();                                       //call the intro function
-    assignItems(item, item1, item2, item3);
     gameloop();                                         //call the rest of stuff
 }
